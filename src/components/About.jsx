@@ -9,6 +9,8 @@ export default function About() {
         <AboutSection id="AboutSection">
             <Container maxWidth="lg">
                 <Heading>About</Heading>
+                <br />
+                <br />
                 <Grid container>
                     <Grid item md={5}>
                         <Description>
@@ -141,7 +143,7 @@ export default function About() {
 
 const AboutSection = styled.section`
     background: rgba(71, 109, 124, 0.5);
-    padding: 30px 0;
+    padding: 30px 0 50px 0;
 
     h3 {
         font-size: 26px;
