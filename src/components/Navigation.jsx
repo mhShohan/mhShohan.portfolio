@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Nav() {
     return (
@@ -11,10 +12,13 @@ export default function Nav() {
             </div>
             <Menu>
                 <a href="#AboutSection">About</a>
-                <a href="#h">Projects</a>
-                <a href="#h">Blogs</a>
+                <a href="#projectSection">Projects</a>
+                <a href="#blogSection">Blogs</a>
                 <a href="#h">Contact</a>
             </Menu>
+            <HumbergarMenu>
+                <MenuIcon sx={{ fontSize: 50 }} />
+            </HumbergarMenu>
         </Navbar>
     );
 }
@@ -30,7 +34,7 @@ const Navbar = styled.nav`
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 100230;
 `;
 
 const Logo = styled.h1`
@@ -38,14 +42,37 @@ const Logo = styled.h1`
     color: #77abb7;
     font-size: 32px;
     font-family: 'Mochiy Pop P One', sans-serif;
+
+    @media (max-width: 900px) {
+        margin-left: 10px;
+        font-size: 22px;
+    }
 `;
 
 const Menu = styled.div`
     margin-right: 4rem;
+
     a {
         color: #77abb7;
         font-size: 26px;
         padding: 0 20px;
         font-weight: 700;
+    }
+    @media (max-width: 900px) {
+        a {
+            display: none;
+        }
+    }
+`;
+
+const HumbergarMenu = styled.div`
+    color: #77abb7;
+    display: none;
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+
+    @media (max-width: 900px) {
+        display: block;
     }
 `;

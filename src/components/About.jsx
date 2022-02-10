@@ -35,10 +35,10 @@ export default function About() {
                         <SkillsSection>
                             <h2>Tools And Technologies I used</h2>
                             <Grid container>
-                                <Grid item xs={3}>
+                                <Grid item xs={12} sm={3}>
                                     <h3>Languages : </h3>
                                 </Grid>
-                                <Grid item xs={9}>
+                                <Grid item xs={12} sm={9}>
                                     <SkillsWrapper>
                                         <Skill
                                             img="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
@@ -62,10 +62,10 @@ export default function About() {
                             <br />
 
                             <Grid container>
-                                <Grid item xs={3}>
+                                <Grid item xs={12} sm={3}>
                                     <h3>Libraries / Frameworks : </h3>
                                 </Grid>
-                                <Grid item xs={9}>
+                                <Grid item xs={12} sm={9}>
                                     <SkillsWrapper>
                                         <Skill
                                             img="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
@@ -101,10 +101,10 @@ export default function About() {
                             <br />
 
                             <Grid container>
-                                <Grid item xs={3}>
+                                <Grid item xs={12} sm={3}>
                                     <h3>Tools : </h3>
                                 </Grid>
-                                <Grid item xs={9}>
+                                <Grid item xs={12} sm={9}>
                                     <SkillsWrapper>
                                         <Skill
                                             img="https://camo.githubusercontent.com/fbfcb9e3dc648adc93bef37c718db16c52f617ad055a26de6dc3c21865c3321d/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6769742d73636d2f6769742d73636d2d69636f6e2e737667"
@@ -143,7 +143,7 @@ export default function About() {
 
 const AboutSection = styled.section`
     background: rgba(71, 109, 124, 0.5);
-    padding: 30px 0 50px 0;
+    padding: 70px 0 70px 0;
 
     h3 {
         font-size: 26px;
@@ -159,6 +159,11 @@ const Description = styled.p`
     font-weight: 300;
     text-align: justify;
     margin: 0 30px;
+
+    @media (max-width: 600px) {
+        margin: 0;
+        padding: 0 5px;
+    }
 `;
 
 const SkillsSection = styled.div`
@@ -176,6 +181,43 @@ const SkillsSection = styled.div`
             height: 2px;
             background: #000;
             margin: 0.3rem auto;
+        }
+    }
+    @media (max-width: 1200px) {
+        h3 {
+            font-size: 1.4rem;
+        }
+    }
+    @media (max-width: 1000px) {
+        h3 {
+            font-size: 1.2rem;
+        }
+    }
+    @media (max-width: 900px) {
+        h3 {
+            font-size: 1.6rem;
+        }
+    }
+    @media (max-width: 700px) {
+        h3 {
+            font-size: 1.4rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        h3 {
+            text-align: center;
+            margin-bottom: 6px;
+        }
+        h2 {
+            margin-top: 20px;
+            font-size: 1.8rem;
+        }
+    }
+    @media (max-width: 450px) {
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 20px;
         }
     }
 `;

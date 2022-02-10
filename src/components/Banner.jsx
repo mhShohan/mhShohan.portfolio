@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import mobileImg from '../assets/photos/mobileView.png';
 
 export default function Banner() {
     return (
@@ -9,11 +10,11 @@ export default function Banner() {
             </BannerLeft>
             <BannerRight>
                 <div>
+                    <img src={mobileImg} alt="shohan" className="mobileImg" />
                     <Name>Mehdi Hasan Shohan</Name>
                     <Title>
-                        <h1>
-                            Web Developer Enthusiast || <span>Programer</span>
-                        </h1>
+                        Web Developer Enthusiast ||&nbsp;
+                        <span> Programer</span>
                     </Title>
                     <Decription>
                         An enthusiast student who loves to learn and explore the
@@ -70,35 +71,73 @@ const BannerRight = styled.div`
     flex: 2;
     display: flex;
     align-items: center;
+
+    @media (max-width: 900px) {
+        div {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+    }
+
+    .mobileImg {
+        display: none;
+
+        @media (max-width: 900px) {
+            display: block;
+            width: 90%;
+            margin: 80px 0 0 0;
+        }
+    }
 `;
 
 const Name = styled.h1`
     color: #142850;
     font-family: 'Balsamiq Sans', cursive;
-    /* font-family: 'Roboto', sans-serif; */
-
     font-size: 5rem;
     letter-spacing: -3px;
-
-    /* text-transform: uppercase; */
 
     @media (max-width: 1200px) {
         font-size: 4rem;
     }
+    @media (max-width: 1100px) {
+        font-size: 3rem;
+    }
+    @media (max-width: 900px) {
+        font-size: 4.4rem;
+        letter-spacing: -1px;
+    }
+    @media (max-width: 700px) {
+        font-size: 2.6rem;
+    }
+    @media (max-width: 500px) {
+        font-size: 2.2rem;
+    }
 `;
-const Title = styled.div`
+const Title = styled.h1`
     color: #142850;
     display: flex;
     font-family: 'Balsamiq Sans', cursive;
     letter-spacing: -2px;
+    font-size: 2.4rem;
+    padding-right: 10px;
 
-    h1 {
-        font-size: 2.4rem;
-        padding-right: 10px;
-
-        @media (max-width: 1200px) {
-            font-size: 2rem;
-        }
+    @media (max-width: 1200px) {
+        font-size: 2rem;
+    }
+    @media (max-width: 1100px) {
+        font-size: 1.4rem;
+    }
+    @media (max-width: 900px) {
+        font-size: 2rem;
+    }
+    @media (max-width: 700px) {
+        font-size: 1.4rem;
+    }
+    @media (max-width: 500px) {
+        font-size: 1.1rem;
+        letter-spacing: -1px;
     }
 `;
 
@@ -110,6 +149,12 @@ const Decription = styled.p`
 
     @media (max-width: 1200px) {
         font-size: 20px;
+    }
+    @media (max-width: 900px) {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 10px;
+        margin-right: 0px;
     }
 `;
 
