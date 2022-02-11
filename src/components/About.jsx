@@ -33,7 +33,7 @@ export default function About() {
                     </Grid>
                     <Grid item md={7}>
                         <SkillsSection>
-                            <h2>Tools And Technologies I used</h2>
+                            <h2>Tools And Technologies I'm using</h2>
                             <Grid container>
                                 <Grid item xs={12} sm={3}>
                                     <h3>Languages : </h3>
@@ -143,7 +143,7 @@ export default function About() {
 
 const AboutSection = styled.section`
     background: rgba(71, 109, 124, 0.5);
-    padding: 70px 0 70px 0;
+    padding: 70px 0 110px 0;
 
     h3 {
         font-size: 26px;

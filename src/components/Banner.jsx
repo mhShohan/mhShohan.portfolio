@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import mobileImg from '../assets/photos/mobileView.png';
+import Typer from './TypingAnimation';
 
 export default function Banner() {
     return (
@@ -14,7 +15,11 @@ export default function Banner() {
                     <Name>Mehdi Hasan Shohan</Name>
                     <Title>
                         Web Developer Enthusiast ||&nbsp;
-                        <span> Programer</span>
+                        {/* <> Programer</> */}
+                        <Typer
+                            heading="Things for hipsters:"
+                            dataText={['Programer', 'Learner', 'Developer']}
+                        />
                     </Title>
                     <Decription>
                         An enthusiast student who loves to learn and explore the

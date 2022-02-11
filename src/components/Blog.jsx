@@ -27,5 +27,5 @@ export default function Blog() {
 
 const BlogSection = styled.section`
     background: rgba(71, 109, 124, 0.5);
-    padding: 70px 0 70px 0;
+    padding: 70px 0 110px 0;
 `;

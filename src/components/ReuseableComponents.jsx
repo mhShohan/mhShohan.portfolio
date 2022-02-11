@@ -30,4 +30,17 @@ export const Heading = styled.h1`
         -webkit-transform: skew(45deg);
         transform: skew(45deg);
     }
+
+    @media (max-width: 1100px) {
+        font-size: 4rem;
+    }
+    @media (max-width: 900px) {
+        font-size: 3.6rem;
+    }
+    @media (max-width: 600px) {
+        font-size: 3rem;
+    }
+    @media (max-width: 500px) {
+        font-size: 2.2rem;
+    }
 `;
