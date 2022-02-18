@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
 
 export default function Nav() {
   return (
     <Navbar>
       <div>
-        <a href="#g">
-          <Logo>mhShohan</Logo>
-        </a>
+        <Link to="/">
+          <Logo>mhShohaN</Logo>
+        </Link>
       </div>
       <Menu>
+        <Link to="/">Home</Link>
         <a href="#AboutSection">About</a>
         <a href="#projectSection">Projects</a>
         <a href="#blogSection">Blogs</a>

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Heading } from './ReuseableComponents';
 import { GoMarkGithub } from 'react-icons/go';
 import { AiOutlineEye } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 export default function Project() {
   return (
@@ -106,7 +107,7 @@ export default function Project() {
           </Grid>
         </Grid>
         <SeeMoreBtn>
-          <a href="#a">See More Projects...</a>
+          <Link to="/projects">See More Projects...</Link>
         </SeeMoreBtn>
       </Container>
     </ProjectContainer>

@@ -1,26 +1,19 @@
-import './App.css';
-import About from './components/About';
-import Banner from './components/Banner';
-import Blog from './components/Blog';
-import Contact from './components/Contact';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
-import PersonalInterest from './components/PersonalInterest';
-import Project from './components/Project';
-import Footer from './Footer';
+import Homepage from './pages/Homepage';
+import ProjectsPage from './pages/ProjectsPage';
+import './App.css';
 
 function App() {
   return (
-    <>
+    <Router>
       <Layout>
-        <Banner />
-        <About />
-        <Project />
-        <Blog />
-        <PersonalInterest />
-        <Contact />
-        <Footer />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+        </Routes>
       </Layout>
-    </>
+    </Router>
   );
 }
 
