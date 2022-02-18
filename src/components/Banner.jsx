@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import mobileImg from '../assets/photos/mobileView.png';
 import Typer from './TypingAnimation';
 import { LinkItem } from './ReuseableComponents';
+import Fade from 'react-reveal/Fade';
 
 export default function Banner() {
   return (
@@ -11,26 +12,28 @@ export default function Banner() {
         <img src="./images/shohan.png" alt="shohan" />
       </BannerLeft>
       <BannerRight>
-        <div>
-          <img src={mobileImg} alt="shohan" className="mobileImg" />
-          <Name>Mehdi Hasan Shohan</Name>
-          <Title>
-            Web Developer Enthusiast ||&nbsp;
-            {/* <> Programer</> */}
-            <Typer
-              heading="Things for hipsters:"
-              dataText={['Programer', 'Learner', 'Developer']}
-            />
-          </Title>
-          <Decription>
-            An enthusiast student who loves to learn and explore the world of
-            web development.
-          </Decription>
-          <LinkItem banner={true} />
-          <DownLoadButton>Resume</DownLoadButton>
-          <br />
-          <br />
-        </div>
+        <Fade bottom>
+          <div className="centerElements">
+            <img src={mobileImg} alt="shohan" className="mobileImg" />
+            <Name>Mehdi Hasan Shohan</Name>
+            <Title>
+              Web Developer Enthusiast ||&nbsp;
+              {/* <> Programer</> */}
+              <Typer
+                heading="Things for hipsters:"
+                dataText={['Programer', 'Learner', 'Developer']}
+              />
+            </Title>
+            <Decription>
+              An enthusiast student who loves to learn and explore the world of
+              web development.
+            </Decription>
+            <LinkItem banner={true} />
+            <DownLoadButton>Resume</DownLoadButton>
+            <br />
+            <br />
+          </div>
+        </Fade>
       </BannerRight>
     </BannerWrapper>
   );
@@ -82,7 +85,7 @@ const BannerRight = styled.div`
   align-items: center;
 
   @media (max-width: 900px) {
-    div {
+    .centerElements {
       display: flex;
       align-items: center;
       flex-direction: column;

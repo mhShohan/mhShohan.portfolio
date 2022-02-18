@@ -4,89 +4,96 @@ import { Container, Grid } from '@mui/material';
 import Skill from './Skill';
 import { Heading } from './ReuseableComponents';
 import { skills } from '../data';
+import Fade from 'react-reveal/Fade';
 
 export default function About() {
   return (
     <AboutSection id="AboutSection">
       <Container maxWidth="lg">
-        <Heading>About</Heading>
+        <Fade bottom>
+          <Heading>About</Heading>
+        </Fade>
         <br />
         <br />
         <Grid container>
           <Grid item md={5}>
-            <Description>
-              Hi, I'm Mehdi Hasan Shohan, a passionate self-taught programmer.
-              I'm learning from the open-source community and trying to
-              contribute to the open source community. I started my programming
-              journey about 2 years ago. I am very curious about web
-              technologies and I'm learning several technologies and comfortable
-              with working with these technologies. Currently, I am working with
-              MERN Stack development and practicing on personal projects. I'm
-              comfortable in Javascript, Node.js, Express.js, RestAPIs, JWT,
-              React, Context API, Bootstrap, Material UI, Styled Components,
-              SASS, etc...!!!
-            </Description>
-            <br />
-            <Description>
-              <span>Interested in:</span> Softwere Engineering, Microservices,
-              AWS, Web 3.0 ...!!!
-            </Description>
+            <Fade left>
+              <Description>
+                Hi, I'm Mehdi Hasan Shohan, a passionate self-taught programmer.
+                I'm learning from the open-source community and trying to
+                contribute to the open source community. I started my
+                programming journey about 2 years ago. I am very curious about
+                web technologies and I'm learning several technologies and
+                comfortable with working with these technologies. Currently, I
+                am working with MERN Stack development and practicing on
+                personal projects. I'm comfortable in Javascript, Node.js,
+                Express.js, RestAPIs, JWT, React, Context API, Bootstrap,
+                Material UI, Styled Components, SASS, etc...!!!
+              </Description>
+              <br />
+              <Description>
+                <span>Interested in:</span> Softwere Engineering, Microservices,
+                AWS, Web 3.0 ...!!!
+              </Description>
+            </Fade>
           </Grid>
           <Grid item md={7}>
-            <SkillsSection>
-              <h2>Tools And Technologies I'm using</h2>
-              <Grid container>
-                <Grid item xs={12} sm={3}>
-                  <h3>Languages : </h3>
+            <Fade right>
+              <SkillsSection>
+                <h2>Tools And Technologies I'm using</h2>
+                <Grid container>
+                  <Grid item xs={12} sm={3}>
+                    <h3>Languages : </h3>
+                  </Grid>
+                  <Grid item xs={12} sm={9}>
+                    <SkillsWrapper>
+                      {skills.Languages.map((lng) => (
+                        <Skill key={lng.id} img={lng.img} title={lng.name} />
+                      ))}
+                    </SkillsWrapper>
+                  </Grid>
                 </Grid>
-                <Grid item xs={12} sm={9}>
-                  <SkillsWrapper>
-                    {skills.Languages.map((lng) => (
-                      <Skill key={lng.id} img={lng.img} title={lng.name} />
-                    ))}
-                  </SkillsWrapper>
+                <br />
+                <Grid container>
+                  <Grid item xs={12} sm={3}>
+                    <h3>Libraries / Frameworks : </h3>
+                  </Grid>
+                  <Grid item xs={12} sm={9}>
+                    <SkillsWrapper>
+                      {skills.libraries.map((lng) => (
+                        <Skill key={lng.id} img={lng.img} title={lng.name} />
+                      ))}
+                    </SkillsWrapper>
+                  </Grid>
                 </Grid>
-              </Grid>
-              <br />
-              <Grid container>
-                <Grid item xs={12} sm={3}>
-                  <h3>Libraries / Frameworks : </h3>
+                <br />
+                <Grid container>
+                  <Grid item xs={12} sm={3}>
+                    <h3>Databases : </h3>
+                  </Grid>
+                  <Grid item xs={12} sm={9}>
+                    <SkillsWrapper>
+                      {skills.database.map((lng) => (
+                        <Skill key={lng.id} img={lng.img} title={lng.name} />
+                      ))}
+                    </SkillsWrapper>
+                  </Grid>
                 </Grid>
-                <Grid item xs={12} sm={9}>
-                  <SkillsWrapper>
-                    {skills.libraries.map((lng) => (
-                      <Skill key={lng.id} img={lng.img} title={lng.name} />
-                    ))}
-                  </SkillsWrapper>
+                <br />
+                <Grid container>
+                  <Grid item xs={12} sm={3}>
+                    <h3>Tools : </h3>
+                  </Grid>
+                  <Grid item xs={12} sm={9}>
+                    <SkillsWrapper>
+                      {skills.tools.map((lng) => (
+                        <Skill key={lng.id} img={lng.img} title={lng.name} />
+                      ))}
+                    </SkillsWrapper>
+                  </Grid>
                 </Grid>
-              </Grid>
-              <br />
-              <Grid container>
-                <Grid item xs={12} sm={3}>
-                  <h3>Databases : </h3>
-                </Grid>
-                <Grid item xs={12} sm={9}>
-                  <SkillsWrapper>
-                    {skills.database.map((lng) => (
-                      <Skill key={lng.id} img={lng.img} title={lng.name} />
-                    ))}
-                  </SkillsWrapper>
-                </Grid>
-              </Grid>
-              <br />
-              <Grid container>
-                <Grid item xs={12} sm={3}>
-                  <h3>Tools : </h3>
-                </Grid>
-                <Grid item xs={12} sm={9}>
-                  <SkillsWrapper>
-                    {skills.tools.map((lng) => (
-                      <Skill key={lng.id} img={lng.img} title={lng.name} />
-                    ))}
-                  </SkillsWrapper>
-                </Grid>
-              </Grid>
-            </SkillsSection>
+              </SkillsSection>
+            </Fade>
           </Grid>
         </Grid>
       </Container>

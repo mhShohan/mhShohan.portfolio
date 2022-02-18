@@ -23,6 +23,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgba(119, 171, 183, 0.5);
+  position: relative;
 }
 
 code {

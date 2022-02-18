@@ -5,105 +5,117 @@ import { Heading } from './ReuseableComponents';
 import { GoMarkGithub } from 'react-icons/go';
 import { AiOutlineEye } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import Fade from 'react-reveal/Fade';
 
 export default function Project() {
   return (
     <ProjectContainer id="projectSection">
       <Container>
-        <Heading>Projects</Heading>
+        <Fade bottom>
+          <Heading>Projects</Heading>
+        </Fade>
         <Grid container spacing={2}>
           <Grid item lg={4} md={6} sm={12}>
-            <ProjectItem>
-              <img src="./images/gtp3.jpg" alt="" />
-              <div className="projectDetails">
-                <h2>GTP3 Figma to React</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-                  voluptatum dolorum aut enim debitis sint voluptatem expedita
-                  sed unde dignissimos.
-                </p>
-              </div>
-              <div className="viewLinks">
-                <a
-                  href="https://github.com/mhShohan/gpt3-figma-react"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="gitIcon"
-                >
-                  <GoMarkGithub /> <span>Source Code</span>
-                </a>
-                <a
-                  href="https://gpt3-react-figma.netlify.app"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="liveIcon"
-                >
-                  <AiOutlineEye /> <span>Live View</span>
-                </a>
-              </div>
-            </ProjectItem>
+            <Fade left>
+              <ProjectItem>
+                <img src="./images/gtp3.jpg" alt="" />
+                <div className="projectDetails">
+                  <h2>GTP3 Figma to React</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Totam voluptatum dolorum aut enim debitis sint voluptatem
+                    expedita sed unde dignissimos.
+                  </p>
+                </div>
+                <div className="viewLinks">
+                  <a
+                    href="https://github.com/mhShohan/gpt3-figma-react"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="gitIcon"
+                  >
+                    <GoMarkGithub /> <span>Source Code</span>
+                  </a>
+                  <a
+                    href="https://gpt3-react-figma.netlify.app"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="liveIcon"
+                  >
+                    <AiOutlineEye /> <span>Live View</span>
+                  </a>
+                </div>
+              </ProjectItem>
+            </Fade>
           </Grid>
           <Grid item lg={4} md={6} sm={12}>
-            <ProjectItem>
-              <img src="./images/tesla.jpeg" alt="" />
-              <div className="projectDetails">
-                <h2>Tesla Homepage Clone</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-                  voluptatum dolorum aut enim debitis sint voluptatem expedita
-                  sed unde dignissimos.
-                </p>
-              </div>
-              <div className="viewLinks">
-                <a
-                  href="https://github.com/mhShohan/Tesla_Homepage_Clone_with_React"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="gitIcon"
-                >
-                  <GoMarkGithub /> <span>Source Code</span>
-                </a>
-                <a
-                  href="https://tesla-homepage-clone131.netlify.app"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="liveIcon"
-                >
-                  <AiOutlineEye /> <span>Live View</span>
-                </a>
-              </div>
-            </ProjectItem>
+            <Fade bottom>
+              <ProjectItem>
+                <img src="./images/tesla.jpeg" alt="" />
+                <div className="projectDetails">
+                  <h2>Tesla Homepage Clone</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Totam voluptatum dolorum aut enim debitis sint voluptatem
+                    expedita sed unde dignissimos.
+                  </p>
+                </div>
+                <div className="viewLinks">
+                  <a
+                    href="https://github.com/mhShohan/Tesla_Homepage_Clone_with_React"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="gitIcon"
+                  >
+                    <GoMarkGithub /> <span>Source Code</span>
+                  </a>
+                  <a
+                    href="https://tesla-homepage-clone131.netlify.app"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="liveIcon"
+                  >
+                    <AiOutlineEye /> <span>Live View</span>
+                  </a>
+                </div>
+              </ProjectItem>
+            </Fade>
           </Grid>
           <Grid item lg={4} md={6} sm={12}>
-            <ProjectItem>
-              <img src="./images/admin-dashboard.jpeg" alt="admin-dashboard" />
-              <div className="projectDetails">
-                <h2>Admin Dashboard</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-                  voluptatum dolorum aut enim debitis sint voluptatem expedita
-                  sed unde dignissimos.
-                </p>
-              </div>
-              <div className="viewLinks">
-                <a
-                  href="https://github.com/mhShohan/admin-dashboard-react"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="gitIcon"
-                >
-                  <GoMarkGithub /> <span>Source Code</span>
-                </a>
-                <a
-                  href="https://admin-dashboard2321.netlify.app/"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="liveIcon"
-                >
-                  <AiOutlineEye /> <span>Live View</span>
-                </a>
-              </div>
-            </ProjectItem>
+            <Fade right>
+              <ProjectItem>
+                <img
+                  src="./images/admin-dashboard.jpeg"
+                  alt="admin-dashboard"
+                />
+                <div className="projectDetails">
+                  <h2>Admin Dashboard</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Totam voluptatum dolorum aut enim debitis sint voluptatem
+                    expedita sed unde dignissimos.
+                  </p>
+                </div>
+                <div className="viewLinks">
+                  <a
+                    href="https://github.com/mhShohan/admin-dashboard-react"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="gitIcon"
+                  >
+                    <GoMarkGithub /> <span>Source Code</span>
+                  </a>
+                  <a
+                    href="https://admin-dashboard2321.netlify.app/"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="liveIcon"
+                  >
+                    <AiOutlineEye /> <span>Live View</span>
+                  </a>
+                </div>
+              </ProjectItem>
+            </Fade>
           </Grid>
         </Grid>
         <SeeMoreBtn>

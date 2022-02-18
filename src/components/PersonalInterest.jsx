@@ -3,21 +3,27 @@ import React from 'react';
 import { Heading } from './ReuseableComponents';
 import Slider from './Slider';
 import styled from 'styled-components';
+import Fade from 'react-reveal/Fade';
+import Pulse from 'react-reveal/Pulse';
 
 export default function PersonalInterest() {
   return (
     <PersonalInterestContainer>
       <Container>
-        <Heading>Personal Interest</Heading>
-        <Description>
-          I'm a guitarist and junior musician since 2014, this year I started to
-          perform local concerts. I have been performed with several local bands
-          as a lead guitarist. In 2019, I formed a band called
-          <strong> Distortion</strong> at my university. Now I'm contributing to
-          my band as a founder and lead guitarist...
-        </Description>
+        <Fade bottom>
+          <Heading>Personal Interest</Heading>
+          <Description>
+            I'm a guitarist and junior musician since 2014, that year I started
+            to perform local concerts. I have been performed with several local
+            bands as a lead guitarist. In 2019, I formed a band called
+            <strong> Distortion</strong> at my university. Now I'm contributing
+            to my band as a founder and lead guitarist...
+          </Description>
+        </Fade>
       </Container>
-      <Slider />
+      <Pulse>
+        <Slider />
+      </Pulse>
     </PersonalInterestContainer>
   );
 }
