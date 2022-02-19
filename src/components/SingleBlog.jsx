@@ -1,53 +1,53 @@
 import { Grid } from '@mui/material';
 import React from 'react';
-import blog1 from '../assets/blog1.png';
 import styled from 'styled-components';
+import Fade from 'react-reveal/Fade';
 
-export default function SingleBlog() {
-    return (
-        <SingleBlogContainer>
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={4}>
-                    <BlogImg src={blog1} alt="Blog 1" />
-                </Grid>
-                <Grid item xs={12} md={8}>
-                    <h3>Why I choose NextJS over CRA for new projects</h3>
-                    <p>
-                        I used to use Create React App (CRA) for building new
-                        applications (i.e. app.example.com). For landing pages,
-                        however, I would use NextJS for better SEO (i.e.
-                        www.example.com). Nowadays I will exclusively use NextJS
-                        over CRA when starting new applications for the
-                        following three reasons.
-                    </p>
-                    <span>
-                        Source:
-                        <a href="https://daily.dev/"> Daily.dev</a>
-                    </span>
-                </Grid>
+export default function SingleBlog({ blog }) {
+  return (
+    <Grid item xs={12} md={6}>
+      <Fade bottom>
+        <SingleBlogContainer
+          href={blog.source.link}
+          rel="noreferrer"
+          target="_blank"
+        >
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={4}>
+              <BlogImg src={blog.img} alt={blog.title} />
             </Grid>
+            <Grid item xs={12} md={8}>
+              <h3>{blog.title}</h3>
+              <p>
+                {blog.details.slice(0, 440)} <span>Continue Reading...</span>
+              </p>
+              <span>Source: {blog.source.name}</span>
+            </Grid>
+          </Grid>
         </SingleBlogContainer>
-    );
+      </Fade>
+    </Grid>
+  );
 }
 
 const BlogImg = styled.img`
-    width: 100%;
+  width: 100%;
 `;
 
-const SingleBlogContainer = styled.div`
-    margin-top: 10px;
+const SingleBlogContainer = styled.a`
+  margin-top: 10px;
 
-    p {
-        text-align: justify;
-    }
-    span {
-        font-weight: 700;
-    }
-    a {
-        color: #3838be;
+  p {
+    text-align: justify;
+  }
+  span {
+    font-weight: 700;
+  }
+  a {
+    color: #3838be;
 
-        &:hover {
-            text-decoration: underline;
-        }
+    &:hover {
+      text-decoration: underline;
     }
+  }
 `;

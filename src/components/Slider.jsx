@@ -18,7 +18,6 @@ import { EffectCoverflow, Pagination } from 'swiper';
 export default function Slider() {
   SwiperCore.use([Autoplay]);
 
-  console.log(slider);
   return (
     <ContainerWrapper>
       <Swiper

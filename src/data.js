@@ -38,3 +38,53 @@ export const skills = {
     { id: 4, name: 'Figma', img: './images/skills/figma.svg' },
   ],
 };
+
+export const blogs = [
+  {
+    id: '1',
+    title: 'How TypeScript can change your life',
+    img: './images/blogs/ts.png',
+    details:
+      "JavaScript is now one of the most used programming languages, and it's fantastic at what it does. But it's not always strict enough. It will give us a lot of freedom, which sometimes is exactly what we want. But for big applications not ideal, as we can break parts over time An example of this might be a variable you have in your database, it's intended as a number, but one day it returns a stringed version of a number like 123. This might not be the end of the world, but let's say you were doing calculations with this, and always expected a number, so you don't parse it in any way.That's exactly where TypeScript would have warned you about the value not being correctly defined. So, what is TypeScript?' TypesScript is a superset of JavaScript, giving us static typing, classes, and interfaces.",
+    source: {
+      name: 'daily.dev',
+      link: 'https://h.daily-dev-tips.com/how-typescript-can-change-your-life',
+    },
+  },
+  {
+    id: '3',
+    title: 'Why I choose NextJS over CRA for new projects',
+    img: './images/blogs/blog1.png',
+    details:
+      'When starting a new application, the main goal is to find product market fit. This means reducing distractions. With Create React App, we might need to build three different applications to test out our idea (Client App, Landing Page, API). With NextJS, we only need to build one app to test out our idea.NextJS allows us to build our landing page, application, and API server all in a monolith. We can write backend routes that interact with a database inside of the api/ directory, server side render pages that is important to SEO, and also render things in the client side if necessary.I want to build a monolith when kickstarting an app without compromising SEO. NextJS is the only tool that allows me to do that so that I can focus on solving problems for customers...',
+
+    source: {
+      name: 'dev.to',
+      link: 'https://dev.to/andyrewlee/why-i-choose-nextjs-over-cra-for-new-projects-3f77',
+    },
+  },
+  {
+    id: '4',
+    title: 'Never stop learning!',
+    img: './images/blogs/never.jpg',
+    details:
+      "It's an endless game of learning. And most people either think it's a joke or think I'm crazy. But I'm not. This is why I got into development. The ever-changing ecosystem and upcoming frameworks fuel my endless need to learn and grow. Never stop learning comes to mind when thinking about what it means to be a good developer. And I would say this should be the fact for every single one of us. There is always something to learn, something that changed, or something you could improve on. It also means we are never at 100%, making the hunt to become your best self even more fun.",
+    source: {
+      name: 'daily.dev',
+      link: 'https://h.daily-dev-tips.com/never-stop-learning',
+    },
+  },
+
+  {
+    id: '2',
+    title: 'reduce() method in javascript',
+    img: './images/blogs/code.png',
+    details:
+      "The reduce() method executes a user-supplied “reducer” callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.The first time that the callback is run there is no 'return value of the previous calculation'. If supplied, an initial value may be used in its place. Otherwise, the array element at index 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0). pretty intense ☝️.Actually, this one is quite tricky as compared to map and filter.for now understand this: Each element of the array passes through the function provided by us in order to give a single value as output.",
+
+    source: {
+      name: 'dev.to',
+      link: 'https://dev.to/therajatg/reduce-method-in-javascript-138o',
+    },
+  },
+];

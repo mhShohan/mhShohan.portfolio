@@ -4,32 +4,20 @@ import styled from 'styled-components';
 import { Heading } from './ReuseableComponents';
 import SingleBlog from './SingleBlog';
 import Fade from 'react-reveal/Fade';
+import { blogs } from '../data';
 
 export default function Blog() {
   return (
     <BlogSection id="blogSection">
       <Container>
         <Fade top>
-          <Heading>Blog</Heading>
+          <Heading>Blogs</Heading>
         </Fade>
         <br />
         <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
-            <Fade left>
-              <SingleBlog />
-            </Fade>
-            <Fade right>
-              <SingleBlog />
-            </Fade>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Fade left>
-              <SingleBlog />
-            </Fade>
-            <Fade right>
-              <SingleBlog />
-            </Fade>
-          </Grid>
+          {blogs.map((blog) => (
+            <SingleBlog blog={blog} key={blog.id} />
+          ))}
         </Grid>
       </Container>
     </BlogSection>
