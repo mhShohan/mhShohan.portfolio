@@ -39,7 +39,7 @@ export default function Contact() {
                     </IconContainer>
                     <IconContainer>
                       <EmailOutlinedIcon />
-                      <h4>mehdihasanshohan17@gmail.com</h4>
+                      <h4>mehdihasanshohan25@gmail.com</h4>
                     </IconContainer>
                     <IconContainer>
                       <PhoneIphoneOutlinedIcon />

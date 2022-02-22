@@ -21,7 +21,7 @@ export default function Banner() {
               {/* <> Programer</> */}
               <Typer
                 heading="Things for hipsters:"
-                dataText={['Programer', 'Learner', 'Developer']}
+                dataText={['Programmer', 'Learner', 'Developer']}
               />
             </Title>
             <Decription>
@@ -29,7 +29,13 @@ export default function Banner() {
               web development.
             </Decription>
             <LinkItem banner={true} />
-            <DownLoadButton>Resume</DownLoadButton>
+            <DownLoadButton
+              href="https://drive.google.com/file/d/1nLr3jLFbEzEPAXIUsIuMJ22hSnd4aKvk/view?usp=sharing"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Resume
+            </DownLoadButton>
             <br />
             <br />
           </div>
@@ -181,4 +187,11 @@ const DownLoadButton = styled.a`
   border: 1px solid #142850;
   border-radius: 2px;
   cursor: pointer;
+
+  transition: all ease 300ms;
+
+  &:hover {
+    background: #142850;
+    color: #fff;
+  }
 `;

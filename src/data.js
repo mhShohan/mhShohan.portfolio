@@ -21,7 +21,7 @@ export const skills = {
   libraries: [
     { id: 1, name: 'React', img: './images/skills/react.svg' },
     { id: 2, name: 'Redux', img: './images/skills/redux.svg' },
-    { id: 3, name: 'Next,js', img: './images/skills/next.png' },
+    { id: 3, name: 'Next.js', img: './images/skills/next.png' },
     { id: 4, name: 'Express.js', img: './images/skills/express.png' },
     { id: 5, name: 'Bootstrap', img: './images/skills/bootstrap.svg' },
     { id: 6, name: 'Material UI', img: './images/skills/mui.png' },
@@ -86,5 +86,109 @@ export const blogs = [
       name: 'dev.to',
       link: 'https://dev.to/therajatg/reduce-method-in-javascript-138o',
     },
+  },
+];
+
+//  mern-stack
+//  psdToHTML
+export const projects = [
+  {
+    id: 1,
+    title: 'GPT3 - Figma to React',
+    description:
+      'This front-end web app is a convertion of figma template to React with vanilla CCS, It is a fully mobile responsive site.',
+    viewFront: true,
+    appType: 'frontend',
+    img: './images/projects/gtp3.jpg',
+    github: 'https://github.com/mhShohan/gpt3-figma-react',
+    liveLink: 'https://gpt3-react-figma.netlify.app',
+  },
+  {
+    id: 2,
+    title: 'Admin Dashboard (React)',
+    description:
+      'This admin dashborad is created with react and vanilla CSS. Server site logic and database has not been implemented,',
+    viewFront: true,
+    appType: 'frontend',
+    img: './images/projects/admin-dashboard.jpeg',
+    github: 'https://github.com/mhShohan/admin-dashboard-react',
+    liveLink: 'https://admin-dashboard2321.netlify.app',
+  },
+  {
+    id: 3,
+    title: 'Tesla Homepage Clone',
+    description:
+      'This is a clone of TESLA homepage. Its created with react, react-reveal and vanilla CSS',
+    viewFront: true,
+    appType: 'frontend',
+    img: './images/projects/tesla.jpeg',
+    github: 'https://github.com/mhShohan/Tesla_Homepage_Clone_with_React',
+    liveLink: 'https://tesla-homepage-clone131.netlify.app/',
+  },
+  {
+    id: 4,
+    title: 'Expense Tracker (React, ContextAPI)',
+    description:
+      'A moble responsive front-end app created with React, ContextAPI and vanilla CSS. You can calculate your income/expense with this app.',
+    viewFront: false,
+    appType: 'frontend',
+    img: './images/projects/expense-tracker.png',
+    github: 'https://github.com/mhShohan/expense-tracker',
+    liveLink: 'https://expense-tracker-mhs.netlify.app/',
+  },
+  {
+    id: 5,
+    title: 'React To-Do (ContextAPI & MUI5)',
+    description:
+      'A todo app created with React, ContextAPI and Material UI, Its only a Front-end app, no server site logic has been implemented.',
+    appType: 'frontend',
+    viewFront: false,
+    img: './images/projects/MUI-todo-app.png',
+    github: 'https://github.com/mhShohan/Todo-app-MaterialUI',
+    liveLink: 'https://csb-94n9j.netlify.app/',
+  },
+  {
+    id: 6,
+    title: 'Simple tour App (Material UI)',
+    description:
+      "It's a simple front-end app created with React and Material UI. This app is created for  learning MUI-Material UI.",
+    appType: 'frontend',
+    viewFront: false,
+    img: './images/projects/MUI-tour-app.jpg',
+    github: 'https://github.com/mhShohan/MUI5-tour-app',
+    liveLink: 'https://mui5-tour-app.netlify.app/',
+  },
+  {
+    id: 7,
+    title: 'CUDA - PSD to HTML',
+    description:
+      'Completely Mobile responsive website designed with HTML, CSS and Bootstrap.',
+    viewFront: false,
+    appType: 'psdToHTML',
+    img: './images/projects/cuda.jpg',
+    github: 'https://github.com/mhShohan/CUDA--PSD-to-HTML',
+    liveLink: 'https://mhshohan.github.io/CUDA--PSD-to-HTML/',
+  },
+  {
+    id: 8,
+    title: 'BizPage - PSD to HTML',
+    description:
+      'Completely Mobile responsive website designed with HTML, CSS and Bootstrap.',
+    viewFront: false,
+    appType: 'psdToHTML',
+    img: './images/projects/bizPage.jpg',
+    github: 'https://github.com/mhShohan/BizPage-PSD-to-HTML',
+    liveLink: 'https://mhshohan.github.io/BizPage-PSD-to-HTML/',
+  },
+  {
+    id: 9,
+    title: 'Digital Marketing - PSD to HTML',
+    description:
+      'Completely Mobile responsive website designed with HTML, CSS and Bootstrap.',
+    viewFront: false,
+    appType: 'psdToHTML',
+    img: './images/projects/digital.jpg',
+    github: 'https://github.com/mhShohan/Digital-Marketing--PSD-to-HTML-',
+    liveLink: 'https://mhshohan.github.io/Digital-Marketing--PSD-to-HTML-/',
   },
 ];

@@ -4,7 +4,6 @@ import Project from '../components/Project';
 import Blog from '../components/Blog';
 import PersonalInterest from '../components/PersonalInterest';
 import Contact from '../components/Contact';
-import Footer from '../components/Footer';
 
 export default function Homepage() {
   return (
@@ -15,7 +14,6 @@ export default function Homepage() {
       <Blog />
       <PersonalInterest />
       <Contact />
-      <Footer />
     </>
   );
 }
