@@ -16,7 +16,6 @@ export const skills = {
     { id: 1, name: 'Javascript', img: './images/skills/js.svg' },
     { id: 2, name: 'Typescript', img: './images/skills/ts.svg' },
     { id: 3, name: 'NodeJS', img: './images/skills/node.webp' },
-    { id: 4, name: 'C/C++', img: './images/skills/cpp.svg' },
   ],
   libraries: [
     { id: 1, name: 'React', img: './images/skills/react.svg' },
