@@ -30,7 +30,7 @@ export default function Banner() {
             </Decription>
             <LinkItem banner={true} />
             <DownLoadButton
-              href="https://drive.google.com/file/d/1nLr3jLFbEzEPAXIUsIuMJ22hSnd4aKvk/view?usp=sharing"
+              href="https://drive.google.com/file/d/1aRiVz-q9f8rywx3tjNCVk_JKaKx3Suhx/view?usp=sharing"
               rel="noreferrer"
               target="_blank"
             >
