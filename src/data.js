@@ -103,15 +103,15 @@ export const projects = [
     liveLink: 'https://gpt3-react-figma.netlify.app',
   },
   {
-    id: 2,
-    title: 'Admin Dashboard (React)',
+    id: 11,
+    title: 'Gerich Modern Restaurant',
     description:
-      'This admin dashborad is created with react and vanilla CSS. Server site logic and database has not been implemented,',
+      'Gerich Restaurant Modern UI/UX figma template is coverted into web application with React and vanilla CCS, It is a fully mobile responsive site.',
     viewFront: true,
     appType: 'frontend',
-    img: './images/projects/admin-dashboard.jpg',
-    github: 'https://github.com/mhShohan/admin-dashboard-react',
-    liveLink: 'https://admin-dashboard2321.netlify.app',
+    img: './images/projects/gerich.jpg',
+    github: 'https://github.com/mhShohan/Modern-Restaurant-website-react',
+    liveLink: 'https://gerich1.netlify.app/',
   },
   {
     id: 3,
@@ -123,6 +123,17 @@ export const projects = [
     img: './images/projects/tesla.jpg',
     github: 'https://github.com/mhShohan/Tesla_Homepage_Clone_with_React',
     liveLink: 'https://tesla-homepage-clone131.netlify.app/',
+  },
+  {
+    id: 2,
+    title: 'Admin Dashboard (React)',
+    description:
+      'This admin dashborad is created with react and vanilla CSS. Server site logic and database has not been implemented,',
+    viewFront: false,
+    appType: 'frontend',
+    img: './images/projects/admin-dashboard.jpg',
+    github: 'https://github.com/mhShohan/admin-dashboard-react',
+    liveLink: 'https://admin-dashboard2321.netlify.app',
   },
   {
     id: 4,
