@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container, Grid } from '@mui/material';
-import Skill from './Skill';
-import { Heading } from './ReuseableComponents';
-import { skills } from '../data';
 import Fade from 'react-reveal/Fade';
+import { Heading } from './ReuseableComponents';
 import Education from './Education';
 
 export default function About() {
@@ -43,62 +41,6 @@ export default function About() {
                     </Grid>
                     <Grid item md={12}>
                         <Education />
-                        {/* <Fade right>
-              <SkillsSection>
-                <h2>Tools And Technologies I'm using</h2>
-                <Grid container>
-                  <Grid item xs={12} sm={3}>
-                    <h3>Languages : </h3>
-                  </Grid>
-                  <Grid item xs={12} sm={9}>
-                    <SkillsWrapper>
-                      {skills.Languages.map((lng) => (
-                        <Skill key={lng.id} img={lng.img} title={lng.name} />
-                      ))}
-                    </SkillsWrapper>
-                  </Grid>
-                </Grid>
-                <br />
-                <Grid container>
-                  <Grid item xs={12} sm={3}>
-                    <h3>Libraries / Frameworks : </h3>
-                  </Grid>
-                  <Grid item xs={12} sm={9}>
-                    <SkillsWrapper>
-                      {skills.libraries.map((lng) => (
-                        <Skill key={lng.id} img={lng.img} title={lng.name} />
-                      ))}
-                    </SkillsWrapper>
-                  </Grid>
-                </Grid>
-                <br />
-                <Grid container>
-                  <Grid item xs={12} sm={3}>
-                    <h3>Databases : </h3>
-                  </Grid>
-                  <Grid item xs={12} sm={9}>
-                    <SkillsWrapper>
-                      {skills.database.map((lng) => (
-                        <Skill key={lng.id} img={lng.img} title={lng.name} />
-                      ))}
-                    </SkillsWrapper>
-                  </Grid>
-                </Grid>
-                <br />
-                <Grid container>
-                  <Grid item xs={12} sm={3}>
-                    <h3>Tools : </h3>
-                  </Grid>
-                  <Grid item xs={12} sm={9}>
-                    <SkillsWrapper>
-                      {skills.tools.map((lng) => (
-                        <Skill key={lng.id} img={lng.img} title={lng.name} />
-                      ))}
-                    </SkillsWrapper>
-                  </Grid>
-                </Grid>
-              </SkillsSection>
-            </Fade> */}
                     </Grid>
                 </Grid>
             </Container>
@@ -136,65 +78,4 @@ const Description = styled.p`
         margin: 0;
         padding: 0 5px;
     }
-`;
-
-const SkillsSection = styled.div`
-    h2 {
-        font-family: 'Roboto', sans-serif;
-        text-align: center;
-        font-size: 2rem;
-        text-transform: capitalize;
-        margin-bottom: 20px;
-
-        &::after {
-            content: '';
-            display: block;
-            width: 40%;
-            height: 2px;
-            background: #000;
-            margin: 0.3rem auto;
-        }
-    }
-    @media (max-width: 1200px) {
-        h3 {
-            font-size: 1.4rem;
-        }
-    }
-    @media (max-width: 1000px) {
-        h3 {
-            font-size: 1.2rem;
-        }
-    }
-    @media (max-width: 900px) {
-        h3 {
-            font-size: 1.6rem;
-        }
-    }
-    @media (max-width: 700px) {
-        h3 {
-            font-size: 1.4rem;
-        }
-    }
-
-    @media (max-width: 600px) {
-        h3 {
-            text-align: center;
-            margin-bottom: 6px;
-        }
-        h2 {
-            margin-top: 20px;
-            font-size: 1.8rem;
-        }
-    }
-    @media (max-width: 450px) {
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 20px;
-        }
-    }
-`;
-
-const SkillsWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
 `;

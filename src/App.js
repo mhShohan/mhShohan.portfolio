@@ -4,11 +4,13 @@ import Homepage from './pages/Homepage';
 import ProjectsPage from './pages/ProjectsPage';
 import './App.css';
 import Footer from './components/Footer';
+import ScrollTop from './components/ScrollTop';
 
 function App() {
   return (
     <Router>
       <Layout>
+        <ScrollTop />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/projects" element={<ProjectsPage />} />

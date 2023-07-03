@@ -38,7 +38,7 @@ export default function Banner() {
                         </Description>
                         <LinkItem banner={true} />
                         <DownLoadButton
-                            href='https://drive.google.com/file/d/1aRiVz-q9f8rywx3tjNCVk_JKaKx3Suhx/view?usp=sharing'
+                            href='https://drive.google.com/file/d/1DL0aX9fhYQILhP40z1j0vfPzb8Ycy5DP/view?usp=sharing'
                             rel='noreferrer'
                             target='_blank'
                         >

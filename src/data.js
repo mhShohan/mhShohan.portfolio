@@ -12,23 +12,23 @@ export const slider = [
 ];
 
 export const skills = {
-  Languages: [
+  expertise: [
     { id: 1, name: 'Javascript', img: './images/skills/js.svg' },
-    { id: 2, name: 'Typescript', img: './images/skills/ts.svg' },
-    { id: 3, name: 'NodeJS', img: './images/skills/node.webp' },
+    { id: 2, name: 'React', img: './images/skills/react.svg' },
+    { id: 3, name: 'Express.js', img: './images/skills/express.png' },
+    { id: 4, name: 'Bootstrap', img: './images/skills/bootstrap.svg' },
+    { id: 5, name: 'TailwindCSS', img: './images/skills/tailwind.svg' },
   ],
-  libraries: [
-    { id: 1, name: 'React', img: './images/skills/react.svg' },
-    { id: 2, name: 'Redux', img: './images/skills/redux.svg' },
-    { id: 3, name: 'Next.js', img: './images/skills/next.png' },
-    { id: 4, name: 'Express.js', img: './images/skills/express.png' },
-    { id: 5, name: 'Bootstrap', img: './images/skills/bootstrap.svg' },
-    { id: 6, name: 'Material UI', img: './images/skills/mui.png' },
-    { id: 7, name: 'TailwindCSS', img: './images/skills/tailwind.svg' },
-  ],
-  database: [
+  comfortable: [
     { id: 1, name: 'MongoDB', img: './images/skills/mongo.png' },
-    { id: 2, name: 'Firebase', img: './images/skills/firebase.svg' },
+    { id: 2, name: 'NodeJS', img: './images/skills/node.webp' },
+    { id: 3, name: 'Next.js', img: './images/skills/next.png' },
+    { id: 4, name: 'Material UI', img: './images/skills/mui.png' },
+    { id: 5, name: 'Firebase', img: './images/skills/firebase.svg' },
+  ],
+  familiar: [
+    { id: 1, name: 'Typescript', img: './images/skills/ts.svg' },
+    { id: 2, name: 'Redux', img: './images/skills/redux.svg' },
   ],
   tools: [
     { id: 1, name: 'Git', img: './images/skills/git.svg' },
@@ -93,10 +93,21 @@ export const blogs = [
 export const projects = [
   {
     id: 1,
+    title: 'Melodic Symphony',
+    description:
+      'This Full Stack web application using MERN Stack. Main Feature is role base authentication and authorization, register new user, and Manage Admin Dashboard.',
+    viewFront: true,
+    appType: 'mern-stack',
+    img: './images/projects/melodic-symphony.png',
+    github: 'https://github.com/mhShohan/melodic-symphony',
+    liveLink: 'https://melodic-symphony.web.app/',
+  },
+  {
+    id: 1,
     title: 'GPT3 - Figma to React',
     description:
       'This front-end web app is a convertion of figma template to React with vanilla CCS, It is a fully mobile responsive site.',
-    viewFront: true,
+    viewFront: false,
     appType: 'frontend',
     img: './images/projects/gtp3.jpg',
     github: 'https://github.com/mhShohan/gpt3-figma-react',
