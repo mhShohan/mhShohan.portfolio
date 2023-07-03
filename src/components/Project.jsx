@@ -1,4 +1,4 @@
-import { Container, Grid } from '@mui/material';
+import { Container } from '@mui/material';
 import React from 'react';
 import styled from 'styled-components';
 import { Heading } from './ReuseableComponents';

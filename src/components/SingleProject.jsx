@@ -1,4 +1,3 @@
-import { Grid } from '@mui/material';
 import React from 'react';
 import styled from 'styled-components';
 import { GoMarkGithub } from 'react-icons/go';

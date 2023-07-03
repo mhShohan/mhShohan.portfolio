@@ -98,26 +98,6 @@ const SkillContainer = styled.section`
     background: #6d97a3;
 `;
 
-const Description = styled.p`
-    font-size: 18px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    text-align: justify;
-    margin: 0 30px;
-    letter-spacing: -0.9px;
-    line-height: 24px;
-
-    span {
-        font-weight: 600;
-        text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-        margin: 0;
-        padding: 0 5px;
-    }
-`;
-
 const SkillsSection = styled.div`
     h3 {
         font-size: 1.6rem;
