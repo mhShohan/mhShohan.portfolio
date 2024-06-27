@@ -1,5 +1,5 @@
 {
-  "name": "project-setup",
+  "name": "mhshohan.portfolio.client",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -24,12 +24,11 @@
     "react-dom": "^18",
     "react-hook-form": "^7.51.4",
     "react-redux": "^9.1.2",
-    "sonner": "^1.4.41",
-    "sooner": "^1.1.4",
+    "sonner": "^1.5.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.14.9",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",

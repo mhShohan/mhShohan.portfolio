@@ -10,14 +10,24 @@ interface IUser extends JwtPayload {
 
 const key = 'token';
 
+/**
+ * set token in local storage
+ * @param token 
+ * @returns 
+ */
 const setToken = (token: string) => {
   if (!key || typeof window === "undefined") {
-    return "";
+    return;
   }
+
+  if (!token) return;
   return localStorage.setItem(key, token);
 };
 
-
+/**
+ * get token from local storage
+ * @returns token from local storage
+ */
 const getToken = () => {
   if (!key || typeof window === "undefined") {
     return "";
@@ -25,6 +35,10 @@ const getToken = () => {
   return localStorage.getItem(key);
 };
 
+/**
+ * remove token from local storage
+ * @returns 
+ */
 const removeToken = () => {
   if (!key || typeof window === "undefined") {
     return "";
@@ -33,6 +47,10 @@ const removeToken = () => {
   return localStorage.removeItem(key);
 };
 
+/**
+ * get user from token
+ * @returns user
+ */
 const getUser = () => {
   if (!key || typeof window === "undefined") {
     return null
