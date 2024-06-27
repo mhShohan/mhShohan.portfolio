@@ -1,6 +1,6 @@
 {
-  "name": "backend-boilerplate",
-  "version": "0.0.1",
+  "name": "mhshohan.portfolio.server",
+  "version": "0.1.0",
   "description": "",
   "main": "server.js",
   "scripts": {

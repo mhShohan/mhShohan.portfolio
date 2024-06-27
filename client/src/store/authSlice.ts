@@ -6,11 +6,9 @@ interface InitialState {
   token: null | string;
 }
 
-
 interface IUser extends JwtPayload {
   id: number;
   email: string;
-  name: string;
   username: string;
   role: 'ADMIN' | 'USER';
 }
