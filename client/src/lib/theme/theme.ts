@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#1586FD"
+      main: "#C3FF93"
     },
     secondary: {
       main: "#666f73"
@@ -16,7 +16,8 @@ const theme = createTheme({
       },
       styleOverrides: {
         root: {
-          padding: '5px 30px'
+          padding: '5px 30px',
+          fontWeight: 'bold',
         }
       },
     },
@@ -27,12 +28,9 @@ const theme = createTheme({
     },
   },
   typography: {
-    body1: {
-      color: '#0B1134CC'
-    }
+    fontFamily: 'Ubuntu, sans-serif',
   }
 })
 
-theme.shadows[1] = '0 5px 22px lightgray'
 
 export default theme

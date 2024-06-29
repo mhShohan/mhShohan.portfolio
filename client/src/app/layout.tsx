@@ -1,22 +1,24 @@
 import Providers from '@/lib/Providers/Providers';
+import { CssBaseline } from '@mui/material';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Ubuntu } from 'next/font/google';
 import { Toaster } from 'sonner';
 
-const inter = Inter({ subsets: ['latin'] });
+const ubuntu = Ubuntu({ subsets: ['cyrillic'], weight: ['300', '400', '500', '700'] });
 
 export const metadata: Metadata = {
-  title: 'Next.js Project Setup With MUI',
+  title: "mhShohan's portfolio",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <Providers>
       <html lang='en'>
-        <body className={inter.className}>
+        <body className={ubuntu.className}>
           <AppRouterCacheProvider>
             <>
+              <CssBaseline />
               <Toaster />
               {children}
             </>
