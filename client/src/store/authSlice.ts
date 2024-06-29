@@ -1,20 +1,17 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { JwtPayload, jwtDecode } from 'jwt-decode';
+import { JwtPayload } from 'jwt-decode';
 
 interface InitialState {
-  user: null | IUser;
   token: null | string;
 }
+
 
 interface IUser extends JwtPayload {
   id: number;
   email: string;
-  username: string;
-  role: 'ADMIN' | 'USER';
 }
 
 const initialState: InitialState = {
-  user: null,
   token: null
 };
 
@@ -23,13 +20,9 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     setLoggedInUser: (state, action: PayloadAction<string>) => {
-      const user = jwtDecode(action.payload) as IUser;
-
       state.token = action.payload
-      state.user = user
     },
     logoutUser: (state) => {
-      state.user = null;
       state.token = null;
     }
   }

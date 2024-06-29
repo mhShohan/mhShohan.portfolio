@@ -1,3 +1,3 @@
 export const config = {
-  baseUrl: process.env.NEXT_PUBLIC_BASE_URL
+  baseUrl: 'http://localhost:8000/api/v1'
 }

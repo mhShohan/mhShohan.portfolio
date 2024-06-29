@@ -35,6 +35,7 @@ const CustomInput = ({
           label={label}
           type={type}
           variant='outlined'
+          color='secondary'
           size={size}
           fullWidth={fullWidth}
           placeholder={placeholder || label}
