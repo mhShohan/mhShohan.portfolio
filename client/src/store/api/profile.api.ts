@@ -15,7 +15,7 @@ const profileApi = baseApi.injectEndpoints({
     updateProfile: build.mutation({
       query: (payload) => ({
         url: "/profile",
-        method: "POST",
+        method: "PATCH",
         body: payload,
       }),
       invalidatesTags: [tagTypes.profile],

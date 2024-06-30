@@ -2,9 +2,10 @@ export interface ITechnology {
   _id: string;
   name: string;
   image: string;
+  visible?: boolean
   createAt?: string;
   updateAt?: string;
-  isDeleted?: string;
+  isDeleted?: boolean;
 }
 
 

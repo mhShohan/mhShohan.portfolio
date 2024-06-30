@@ -21,6 +21,7 @@ class ProfileServices {
   async update(payload: Partial<IProfile>) {
     const id = '667efc3a0f83a8bcab31e3dc'
     const { techStacks, socialLinks, ...restPayload } = payload
+
     const modifiedPayload: Record<string, unknown> = { ...restPayload }
 
     if (socialLinks && Object.keys(socialLinks).length) {
@@ -106,7 +107,6 @@ class ProfileServices {
       return profile;
 
     } catch (error) {
-      console.log(error)
       await session.abortTransaction();
     } finally {
       await session.endSession();

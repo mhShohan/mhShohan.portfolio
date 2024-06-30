@@ -263,11 +263,17 @@ const ProjectsPage = () => {
         ) : (
           <Container maxWidth='lg'>
             {data?.data?.map((project: IProject) => (
-              <Grid container spacing={1} key={project._id} boxShadow={24} borderRadius={4}>
-                <Grid item xs={12} md={4}>
-                  <Image src={project.cover} alt={project.name} width={400} height={400} />
+              <Grid container spacing={1} p={4} key={project._id} boxShadow={24} borderRadius={4}>
+                <Grid item xs={12} md={6}>
+                  <Image
+                    src={project.cover}
+                    alt={project.name}
+                    width={400}
+                    height={300}
+                    style={{ width: '100%' }}
+                  />
                 </Grid>
-                <Grid item xs={12} md={8}>
+                <Grid item xs={12} md={6}>
                   <Stack p={2} gap={0.5} borderRadius={4}>
                     <Typography variant='h5' lineHeight={1} fontWeight='700'>
                       {project.name}
