@@ -31,7 +31,7 @@ const schema = new Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
   category: { type: String, required: true, enum: ['Frontend', 'Backend', 'Full-stack'] },
-  featured: { type: Boolean, required: true },
+  featured: { type: Boolean, default: false },
   features: [{ type: String }],
   technologies: [{ type: techSchema }],
   cover: { type: String, required: true },

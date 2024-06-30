@@ -4,6 +4,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import type { Metadata } from 'next';
 import { Ubuntu } from 'next/font/google';
 import { Toaster } from 'sonner';
+import '@/styles/scrollBar.css';
 
 const ubuntu = Ubuntu({ subsets: ['cyrillic'], weight: ['300', '400', '500', '700'] });
 

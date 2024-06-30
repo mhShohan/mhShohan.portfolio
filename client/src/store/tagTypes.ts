@@ -1,7 +1,8 @@
 export const tagTypes = {
   technology: 'TECHNOLOGY',
   education: 'EDUCATION',
-  experience: 'EXPERIENCE'
+  experience: 'EXPERIENCE',
+  project: 'PROJECT',
 }
 
 

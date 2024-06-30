@@ -9,7 +9,7 @@ class ExperienceServices {
   }
 
   async readAll() {
-    return this.model.find();
+    return this.model.find().sort({ endDate: -1 });
   }
 }
 
