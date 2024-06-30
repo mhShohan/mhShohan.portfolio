@@ -7,7 +7,7 @@ export interface ITechnology {
 }
 
 const technologySchema = new Schema({
-  name: { type: String, required: true },
+  name: { type: String, required: true, unique: true, trim: true },
   image: { type: String, required: true },
   isDeleted: { type: Boolean, default: false },
 }, { timestamps: true });

@@ -9,7 +9,8 @@ const commonPrivateRoutes = [
   '/dashboard/educations',
   '/dashboard/experiences',
   '/dashboard/projects',
-  '/dashboard/profile'
+  '/dashboard/profile',
+  '/dashboard/blogs',
 ];
 
 

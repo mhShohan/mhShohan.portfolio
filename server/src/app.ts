@@ -9,7 +9,7 @@ const app: Application = express();
 
 app.use(express.json());
 app.use(morgan('dev'));
-app.use(cors({ origin: ['*'] }));
+app.use(cors({ origin: ['http://localhost:3000'] }));
 
 // application routes
 app.use('/api/v1', rootRoutes);

@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <AppRouterCacheProvider>
             <>
               <CssBaseline />
-              <Toaster />
+              <Toaster richColors duration={1000} />
               {children}
             </>
           </AppRouterCacheProvider>
