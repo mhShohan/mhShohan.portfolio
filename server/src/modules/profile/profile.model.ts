@@ -4,6 +4,7 @@ interface ITechnology {
   _id: string;
   name: string;
   image: string;
+  isDeleted?: boolean;
 }
 
 export interface IProfile {
@@ -36,8 +37,10 @@ export interface IProfile {
 }
 
 const techSchema = new Schema({
-  name: { type: String, required: true },
-  image: { type: String, required: true },
+  _id: { type: String },
+  name: { type: String },
+  image: { type: String },
+  isDeleted: { type: Boolean },
 }, { _id: false });
 
 const schema = new Schema({

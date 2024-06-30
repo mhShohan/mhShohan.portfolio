@@ -3,6 +3,7 @@ export const tagTypes = {
   education: 'EDUCATION',
   experience: 'EXPERIENCE',
   project: 'PROJECT',
+  profile: 'PROFILE',
 }
 
 
