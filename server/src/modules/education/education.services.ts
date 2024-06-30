@@ -8,7 +8,7 @@ class EducationServices {
   }
 
   async readAll() {
-    return this.model.find();
+    return this.model.find().sort({ endDate: -1 });
   }
 }
 
