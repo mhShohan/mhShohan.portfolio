@@ -6,6 +6,8 @@ import Profile, { IProfile } from "./profile.model";
 import hashPassword from "../../utils/hashPassword";
 import { ITechnology } from "../technology/technology.model";
 import mongoose from "mongoose";
+import Blog from "../blog/blog.model";
+import Project from "../project/project.model";
 
 class ProfileServices {
   private model = Profile;
@@ -116,6 +118,13 @@ class ProfileServices {
 
   async self() {
     return this.model.findById('667efc3a0f83a8bcab31e3dc');
+  }
+
+  async analysis() {
+    const blogCount = await Blog.countDocuments();
+    const projectCount = await Project.countDocuments();
+
+    return { blogCount, projectCount };
   }
 
   // login 

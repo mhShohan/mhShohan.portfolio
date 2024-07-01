@@ -12,7 +12,12 @@ import { IExperience, IProject, IProjectCategory, ITechnology } from '@/types';
 import dateFormatter from '@/utils/dateFormatter';
 import { zodResolver } from '@hookform/resolvers/zod';
 import CircleIcon from '@mui/icons-material/Circle';
+
+import GitHubIcon from '@mui/icons-material/GitHub';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import LinkIcon from '@mui/icons-material/Link';
 import {
+  Box,
   Button,
   CircularProgress,
   Container,
@@ -23,7 +28,6 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import Link from 'next/link';
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { z } from 'zod';
@@ -31,6 +35,8 @@ import { z } from 'zod';
 import AddIcon from '@mui/icons-material/Add';
 import uploadFileToCloudinary from '@/lib/uploadFileToCloudinary';
 import Image from 'next/image';
+import Link from 'next/link';
+import Technology from '@/components/UI/Technology';
 
 const defaultValues = {
   name: '',
@@ -73,8 +79,6 @@ const ProjectsPage = () => {
   const [addProject] = useAddProjectMutation();
   const { data, isLoading: isProjectLoading } = useGetAllProjectsQuery(undefined);
 
-  console.log(data);
-
   const handleSubmit = async (data: any) => {
     if (responsibilities.length <= 0) {
       toast.error('Must add job features');
@@ -108,6 +112,10 @@ const ProjectsPage = () => {
 
       if (res.success) {
         toast.success('Experience added successfully');
+        setResponsibilities([]);
+        setTechnologies([]);
+        setFile(null);
+        setResCount(1);
         return true;
       } else {
         toast.error('Error adding Experience');
@@ -262,35 +270,93 @@ const ProjectsPage = () => {
           <CircularLoader />
         ) : (
           <Container maxWidth='lg'>
-            {data?.data?.map((project: IProject) => (
-              <Grid container spacing={1} p={4} key={project._id} boxShadow={24} borderRadius={4}>
-                <Grid item xs={12} md={6}>
-                  <Image
-                    src={project.cover}
-                    alt={project.name}
-                    width={400}
-                    height={300}
-                    style={{ width: '100%' }}
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <Stack p={2} gap={0.5} borderRadius={4}>
-                    <Typography variant='h5' lineHeight={1} fontWeight='700'>
-                      {project.name}
-                    </Typography>
-                    <Typography variant='h6' lineHeight={1} fontWeight='500'>
-                      Features:
-                    </Typography>
-                    <Divider />
-                    {project.features.map((res) => (
-                      <Typography variant='body1' pl={1} key={res} lineHeight={1}>
-                        <CircleIcon sx={{ fontSize: '10px' }} /> {res}
-                      </Typography>
-                    ))}
-                  </Stack>
-                </Grid>
-              </Grid>
-            ))}
+            <Stack spacing={2} my={3}>
+              {data?.data?.map((project: IProject) => (
+                <Stack key={project._id} boxShadow={24} p={4} borderRadius={4}>
+                  <Grid container spacing={3}>
+                    <Grid item xs={12} md={4}>
+                      <Image
+                        src={project.cover}
+                        alt={project.name}
+                        width={500}
+                        height={300}
+                        style={{
+                          width: '100%',
+                          borderRadius: '1rem',
+                          backgroundPosition: 'top left',
+                        }}
+                      />
+                    </Grid>
+                    <Grid item xs={12} md={8}>
+                      <Stack justifyContent='space-between' height='100%'>
+                        <Box>
+                          <Typography variant='h5' lineHeight={1}>
+                            {project.name}
+                          </Typography>
+                          <Typography>{project.description}</Typography>
+                        </Box>
+                        <Box>
+                          <Typography fontWeight='700' mt={1}>
+                            Features:{' '}
+                          </Typography>
+                          {project.features.map((feature) => (
+                            <Typography key={feature} pl={1}>
+                              <CircleIcon sx={{ fontSize: '10px', mx: '2px' }} />
+                              {feature}
+                            </Typography>
+                          ))}
+                        </Box>
+                        <Box>
+                          <Typography fontWeight='700' mt={1}>
+                            Technology:{' '}
+                          </Typography>
+                          <Box display='flex' flexWrap='wrap'>
+                            {project.technologies.map((tech) => (
+                              <Technology key={tech._id} technology={tech} theme='dark' />
+                            ))}
+                          </Box>
+                        </Box>
+                        <Stack my={2} spacing={1} direction='row'>
+                          <Button
+                            LinkComponent={Link}
+                            href={project.liveSiteLink}
+                            startIcon={<LinkIcon />}
+                            variant='outlined'
+                            color='secondary'
+                          >
+                            Live Site
+                          </Button>
+                          {Object.entries(project.repositoryLink).map(([key, value]) => (
+                            <>
+                              {value && (
+                                <Button
+                                  LinkComponent={Link}
+                                  href={value}
+                                  startIcon={<GitHubIcon />}
+                                  variant='outlined'
+                                  color='secondary'
+                                >
+                                  {key.split('_').join(' ').toUpperCase()}
+                                </Button>
+                              )}
+                            </>
+                          ))}
+                        </Stack>
+                        <Button
+                          LinkComponent={Link}
+                          href={`/projects/${project._id}`}
+                          variant='contained'
+                          color='secondary'
+                          startIcon={<VisibilityIcon />}
+                        >
+                          View Project Details
+                        </Button>
+                      </Stack>
+                    </Grid>
+                  </Grid>
+                </Stack>
+              ))}
+            </Stack>
           </Container>
         )}
       </Stack>

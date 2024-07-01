@@ -16,9 +16,17 @@ import RoomIcon from '@mui/icons-material/Room';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import SendIcon from '@mui/icons-material/Send';
+import { useGetProfileQuery } from '@/store/api/profile.api';
+import Loader from '@/components/shared/Loader';
+import { IProfile } from '@/types';
 
 const ContactPage = () => {
+  const { data, isLoading } = useGetProfileQuery(undefined);
   const theme = useTheme();
+
+  if (isLoading) return <Loader />;
+
+  const profile = data?.data as IProfile;
 
   return (
     <Container>
@@ -53,7 +61,7 @@ const ContactPage = () => {
               <Typography variant='h5' fontWeight='700'>
                 Address
               </Typography>
-              <Typography variant='body1'>Dhaka, Bangladesh</Typography>
+              <Typography variant='body1'>{profile.address}</Typography>
             </Box>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
@@ -75,7 +83,7 @@ const ContactPage = () => {
               <Typography variant='h5' fontWeight='700'>
                 Email
               </Typography>
-              <Typography variant='body1'>mehdihasanshohan25@gmail.com</Typography>
+              <Typography variant='body1'>{profile.email}</Typography>
             </Box>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
@@ -97,7 +105,7 @@ const ContactPage = () => {
               <Typography variant='h5' fontWeight='700'>
                 Phone & Whatsapp
               </Typography>
-              <Typography variant='body1'>+8801721146655</Typography>
+              <Typography variant='body1'>{profile.contactNo}</Typography>
             </Box>
           </Grid>
         </Grid>

@@ -12,6 +12,14 @@ const profileApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.profile],
     }),
 
+    profileAnalysis: build.query({
+      query: () => ({
+        url: "/profile/analysis",
+        method: "GET"
+      }),
+      providesTags: [tagTypes.profile],
+    }),
+
     updateProfile: build.mutation({
       query: (payload) => ({
         url: "/profile",
@@ -25,4 +33,4 @@ const profileApi = baseApi.injectEndpoints({
 });
 
 
-export const { useGetProfileQuery, useUpdateProfileMutation } = profileApi;
+export const { useGetProfileQuery, useProfileAnalysisQuery, useUpdateProfileMutation } = profileApi;

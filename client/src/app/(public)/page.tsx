@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 
 // mui
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -12,9 +12,52 @@ import { Button, Container, Grid, Stack, Typography, useTheme } from '@mui/mater
 
 // assets
 import img from '@/assets/banner.png';
+import { useGetProfileQuery } from '@/store/api/profile.api';
+import Loader from '@/components/shared/Loader';
+import { IProfile } from '@/types';
+import { toast } from 'sonner';
 
 const Homepage = () => {
+  const { data, isLoading: isProfileLoading } = useGetProfileQuery(undefined);
+  const [isLoading, setIsLoading] = useState(false);
   const theme = useTheme();
+
+  if (isProfileLoading) return <Loader />;
+
+  const profile: IProfile = data?.data;
+
+  // const onButtonClick = () => {
+  //   const pdfUrl = '/mh-shohan-FE.pdf';
+  //   const link = document.createElement('a');
+  //   link.href = pdfUrl;
+  //   link.download = 'mh-shohan-FE.pdf'; // specify the filename
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
+
+  // const handleDownload = () => {
+  //   const toastId = toast.loading('Downloading resume...');
+  //   fetch('/mh-shohan-FE.pdf')
+  //     check to make sure you didn't have an unexpected failure (may need to check other things here depending on use case / backend)
+  //     .then((resp) => (resp.status === 200 ? resp.blob() : Promise.reject('something went wrong')))
+  //     .then((blob) => {
+  //       const url = window.URL.createObjectURL(blob);
+  //       const a = document.createElement('a');
+  //       a.style.display = 'none';
+  //       a.href = url;
+  //       the filename you want
+  //       a.download = 'mhShohan.resume.pdf';
+  //       document.body.appendChild(a);
+  //       a.click();
+  //       window.URL.revokeObjectURL(url);
+  //       or you know, something with better UX...
+  //       toast.success('Resume has been downloaded!', { id: toastId });
+  //     })
+  //     .catch((e) => {
+  //       toast.error('Failed to download resume. Please try again later.', { id: toastId });
+  //     });
+  // };
 
   return (
     <Container maxWidth='lg'>
@@ -41,25 +84,31 @@ const Homepage = () => {
               textAlign={{ xs: 'center', md: 'left' }}
               lineHeight='1'
             >
-              Mehdi Hasan Shohan
+              {profile?.name}
             </Typography>
             <Typography
               variant='h4'
               textAlign={{ xs: 'center', md: 'left' }}
               fontSize={{ xs: '1.2rem', sm: '1.6rem', md: '2rem' }}
             >
-              Full Stack Developer (MERN/PERN Stack)
+              {profile.title}
             </Typography>
             <Typography variant='body1' textAlign={{ xs: 'center', md: 'left' }}>
-              An enthusiast student who loves to learn and explore the world of web development.
+              {profile.bio}
             </Typography>
             <Stack direction='row' gap={1}>
-              <Button variant='outlined' color='primary'>
+              <Button
+                variant='outlined'
+                target='_blank'
+                color='primary'
+                LinkComponent={Link}
+                href={profile.resume}
+              >
                 View Resume
               </Button>
-              <Button variant='outlined' color='primary'>
+              {/* <Button variant='outlined' color='primary'>
                 Download Resume
-              </Button>
+              </Button> */}
             </Stack>
           </Grid>
           <Grid item xs={12} md={4} display='flex' justifyContent='center' alignItems='center'>
@@ -74,7 +123,7 @@ const Homepage = () => {
           }}
           gap={1}
         >
-          <SocialLinks link='https://www.linkedin.com/in/mehdi-hasan-shohan'>
+          <SocialLinks link={profile.socialLinks?.linkedin as string}>
             <LinkedInIcon
               sx={{
                 color: 'rgba(255, 255, 255, 0.5)',
@@ -84,7 +133,7 @@ const Homepage = () => {
               }}
             />
           </SocialLinks>
-          <SocialLinks link='https://github.com/mhShohan'>
+          <SocialLinks link={profile.socialLinks?.github as string}>
             <GitHubIcon
               sx={{
                 color: 'rgba(255, 255, 255, 0.5)',
@@ -94,7 +143,7 @@ const Homepage = () => {
               }}
             />
           </SocialLinks>
-          <SocialLinks link='https://x.com/mhShohan25'>
+          <SocialLinks link={profile.socialLinks?.twitter as string}>
             <TwitterIcon
               sx={{
                 color: 'rgba(255, 255, 255, 0.5)',

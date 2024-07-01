@@ -55,6 +55,18 @@ class ProfileControllers {
       data: result,
     });
   });
+
+  // update
+  analysis = asyncHandler(async (_req, res) => {
+    const result = await this.services.analysis();
+
+    this.sendResponse(res, {
+      success: true,
+      statusCode: this.STATUS.OK,
+      message: `${this.messageTitle} Updated Successfully`,
+      data: result,
+    });
+  });
 }
 
 const profileControllers = new ProfileControllers();

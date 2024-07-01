@@ -2,7 +2,7 @@
 
 import Loader from '@/components/shared/Loader';
 import { useGetProfileQuery } from '@/store/api/profile.api';
-import { Box, Container, Divider, Grid, Stack, Typography } from '@mui/material';
+import { Box, Button, Container, Divider, Grid, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 
 import profileImage from '@/assets/profile.png';
@@ -27,7 +27,7 @@ const AboutPage = () => {
 
   return (
     <Container maxWidth='lg'>
-      <Grid container my={10}>
+      <Grid container my={{ xs: 0, md: 10 }} direction={{ xs: 'column-reverse', md: 'row' }}>
         <Grid item xs={12} md={6} display='flex' alignItems='center'>
           <Stack gap={1}>
             <Typography variant='h4' textAlign='justify' fontWeight='700'>
@@ -39,9 +39,27 @@ const AboutPage = () => {
             <Typography variant='body2' fontFamily='Poppins' fontStyle='italic'>
               <strong>Interested In:</strong> Software Engineering, System Design..!!!
             </Typography>
+            <Box>
+              <Button
+                variant='outlined'
+                color='primary'
+                LinkComponent={Link}
+                target='_blank'
+                href={data?.data.resume}
+              >
+                View Resume
+              </Button>
+            </Box>
           </Stack>
         </Grid>
-        <Grid item xs={12} md={6} display='flex' justifyContent='flex-end' alignItems='center'>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          display='flex'
+          justifyContent={{ xs: 'center', md: 'flex-end' }}
+          alignItems='center'
+        >
           <Box
             sx={{
               maxWidth: 400,
@@ -111,55 +129,100 @@ const AboutPage = () => {
               </Stack>
             ))} */}
             {/*  */}
-            <Stack direction='row' alignItems='center' justifyContent='flex-start'>
+            <Stack
+              direction={{ xs: 'column', md: 'row' }}
+              alignItems='center'
+              justifyContent='flex-start'
+            >
               <Typography flex={1} variant='h5' fontWeight='700' textTransform='uppercase'>
                 languages
               </Typography>
-              <Stack flex={4} direction='row' justifyContent='flex-start' flexWrap='wrap'>
+              <Stack
+                flex={4}
+                direction='row'
+                justifyContent={{ xs: 'center', md: 'flex-start' }}
+                flexWrap='wrap'
+              >
                 {data?.data?.techStacks.languages.map((tech: ITechnology) => (
                   <Technology key={tech._id} technology={tech} theme='dark' />
                 ))}
               </Stack>
             </Stack>
             {/*  */}
-            <Stack direction='row' alignItems='center' justifyContent='flex-start'>
+            <Stack
+              direction={{ xs: 'column', md: 'row' }}
+              alignItems='center'
+              justifyContent='flex-start'
+            >
               <Typography flex={1} variant='h5' fontWeight='700' textTransform='uppercase'>
                 databases
               </Typography>
-              <Stack flex={4} direction='row' justifyContent='flex-start' flexWrap='wrap'>
+              <Stack
+                flex={4}
+                direction='row'
+                justifyContent={{ xs: 'center', md: 'flex-start' }}
+                flexWrap='wrap'
+              >
                 {data?.data?.techStacks.databases.map((tech: ITechnology) => (
                   <Technology key={tech._id} technology={tech} theme='dark' />
                 ))}
               </Stack>
             </Stack>
             {/*  */}
-            <Stack direction='row' alignItems='center' justifyContent='flex-start'>
+            <Stack
+              direction={{ xs: 'column', md: 'row' }}
+              alignItems='center'
+              justifyContent='flex-start'
+            >
               <Typography flex={1} variant='h5' fontWeight='700' textTransform='uppercase'>
                 backend
               </Typography>
-              <Stack flex={4} direction='row' justifyContent='flex-start' flexWrap='wrap'>
+              <Stack
+                flex={4}
+                direction='row'
+                justifyContent={{ xs: 'center', md: 'flex-start' }}
+                flexWrap='wrap'
+              >
                 {data?.data?.techStacks.backend.map((tech: ITechnology) => (
                   <Technology key={tech._id} technology={tech} theme='dark' />
                 ))}
               </Stack>
             </Stack>
             {/*  */}
-            <Stack direction='row' alignItems='center' justifyContent='flex-start'>
+            <Stack
+              direction={{ xs: 'column', md: 'row' }}
+              alignItems='center'
+              justifyContent='flex-start'
+            >
               <Typography flex={1} variant='h5' fontWeight='700' textTransform='uppercase'>
                 frontend
               </Typography>
-              <Stack flex={4} direction='row' justifyContent='flex-start' flexWrap='wrap'>
+              <Stack
+                flex={4}
+                direction='row'
+                justifyContent={{ xs: 'center', md: 'flex-start' }}
+                flexWrap='wrap'
+              >
                 {data?.data?.techStacks.frontend.map((tech: ITechnology) => (
                   <Technology key={tech._id} technology={tech} theme='dark' />
                 ))}
               </Stack>
             </Stack>
             {/*  */}
-            <Stack direction='row' alignItems='center' justifyContent='flex-start'>
+            <Stack
+              direction={{ xs: 'column', md: 'row' }}
+              alignItems='center'
+              justifyContent='flex-start'
+            >
               <Typography flex={1} variant='h5' fontWeight='700' textTransform='uppercase'>
                 tools
               </Typography>
-              <Stack flex={4} direction='row' justifyContent='flex-start' flexWrap='wrap'>
+              <Stack
+                flex={4}
+                direction='row'
+                justifyContent={{ xs: 'center', md: 'flex-start' }}
+                flexWrap='wrap'
+              >
                 {data?.data?.techStacks.tools.map((tech: ITechnology) => (
                   <Technology key={tech._id} technology={tech} theme='dark' />
                 ))}

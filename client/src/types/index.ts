@@ -46,24 +46,17 @@ export interface IProject {
 
 export type IProjectCategory = 'Frontend' | 'Backend' | 'Full-stack';
 
-// "techStacks": {
-//             "languages": [],
-//             "databases": [],
-//             "backend": [],
-//             "frontend": [],
-//             "tools": []
-//         },
-//         "_id": "667efc3a0f83a8bcab31e3dc",
-//         "name": "Mehdi Hasan Shohan",
-//         "title": "Full-stack Developer",
-//         "email": "mehdihasanshohan25@gmail.com",
-//         "password": "$2b$10$BS38yY5rgfdljxruZsU3z.bHT3OyJTXW3tdmm6r62ikwyU4WJk.LO",
-//         "bio": "bio",
-//         "description": "description",
-//         "resume": "resume",
-//         "contactNo": "+8801721146655",
-//         "address": "shohan123",
-//         "viewPersonalInterest": true,
+
+export interface IBlog {
+  _id: string;
+  title: string;
+  text: string;
+  cover: string;
+  createdAt: Date;
+  updatedAt: Date;
+
+}
+
 
 
 export interface IProfile {
@@ -77,6 +70,15 @@ export interface IProfile {
   contactNo: string;
   address: string;
   viewPersonalInterest: boolean;
+  socialLinks?: {
+    facebook?: string;
+    gitLab?: string;
+    github?: string;
+    leetcode?: string;
+    linkedin?: string;
+    twitter?: string;
+
+  }
   techStacks: {
     languages: ITechnology[];
     databases: ITechnology[];

@@ -16,7 +16,7 @@ class ProjectServices {
   }
 
   async readAll() {
-    return this.model.find();
+    return this.model.find().sort({ featured: -1 });
   }
 }
 

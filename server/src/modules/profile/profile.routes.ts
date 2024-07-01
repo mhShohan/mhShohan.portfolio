@@ -8,5 +8,6 @@ profileRoutes.post('/', profileControllers.create);
 profileRoutes.post('/login', profileControllers.login);
 profileRoutes.get('/', profileControllers.self);
 profileRoutes.patch('/', verifyAuth, profileControllers.update);
+profileRoutes.get('/analysis', verifyAuth, profileControllers.analysis);
 
 export default profileRoutes;

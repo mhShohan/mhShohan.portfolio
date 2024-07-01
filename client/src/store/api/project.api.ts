@@ -12,6 +12,14 @@ const projectApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.project],
     }),
 
+    getSingleProject: build.query({
+      query: (id) => ({
+        url: "/projects/" + id,
+        method: "GET"
+      }),
+      providesTags: [tagTypes.project],
+    }),
+
     addProject: build.mutation({
       query: (payload) => ({
         url: "/projects",
@@ -25,4 +33,4 @@ const projectApi = baseApi.injectEndpoints({
 });
 
 
-export const { useGetAllProjectsQuery, useAddProjectMutation } = projectApi;
+export const { useGetAllProjectsQuery, useGetSingleProjectQuery, useAddProjectMutation } = projectApi;
