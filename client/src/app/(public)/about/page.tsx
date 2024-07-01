@@ -18,6 +18,7 @@ import Technology from '@/components/UI/Technology';
 import Education from '@/components/UI/Education';
 import Skills from '@/components/UI/Skills';
 import PersonalInterest from '@/components/UI/PersonalInterest';
+import SocialLinks from '@/components/UI/SocialLinks';
 
 const AboutPage = () => {
   const { data, isLoading } = useGetProfileQuery(undefined);
@@ -39,10 +40,11 @@ const AboutPage = () => {
             <Typography variant='body2' fontFamily='Poppins' fontStyle='italic'>
               <strong>Interested In:</strong> Software Engineering, System Design..!!!
             </Typography>
+            <SocialLinks socialLinks={data?.data.socialLinks} />
             <Box>
               <Button
-                variant='outlined'
-                color='primary'
+                variant='contained'
+                color='info'
                 LinkComponent={Link}
                 target='_blank'
                 href={data?.data.resume}

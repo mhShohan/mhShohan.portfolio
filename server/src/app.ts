@@ -9,7 +9,7 @@ const app: Application = express();
 
 app.use(express.json());
 app.use(morgan('dev'));
-app.use(cors({ origin: ['https://mhshohan.vercel.app'] }));
+app.use(cors({ origin: ['https://mhshohan.vercel.app', 'http://localhost:3000'] }));
 
 // application routes
 app.use('/api/v1', rootRoutes);

@@ -77,7 +77,6 @@ export interface IProfile {
     leetcode?: string;
     linkedin?: string;
     twitter?: string;
-
   }
   techStacks: {
     languages: ITechnology[];
