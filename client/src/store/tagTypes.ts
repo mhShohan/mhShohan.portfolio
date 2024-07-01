@@ -4,6 +4,7 @@ export const tagTypes = {
   experience: 'EXPERIENCE',
   project: 'PROJECT',
   profile: 'PROFILE',
+  blog: 'BLOG',
 }
 
 

@@ -9,7 +9,7 @@ export interface IBlog {
 const schema = new Schema({
   title: { type: String, required: true, unique: true, trim: true },
   cover: { type: String, required: true },
-  text: { type: Boolean, required: true },
+  text: { type: String, required: true },
 }, { timestamps: true });
 
 

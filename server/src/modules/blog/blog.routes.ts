@@ -14,5 +14,6 @@ const blogRoutes = Router();
 
 blogRoutes.post('/', verifyAuth, validateRequest(blogValidator), blogControllers.create);
 blogRoutes.get('/', blogControllers.readAll);
+blogRoutes.get('/:id', blogControllers.readSingle);
 
 export default blogRoutes;

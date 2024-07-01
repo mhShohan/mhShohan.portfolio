@@ -21,9 +21,21 @@ class BlogControllers {
     });
   });
 
-  // Create
+  // read all
   readAll = asyncHandler(async (req, res) => {
     const result = await this.services.readAll();
+
+    this.sendResponse(res, {
+      success: true,
+      statusCode: this.STATUS.OK,
+      message: `${this.messageTitle} Fetched Successfully`,
+      data: result,
+    });
+  });
+
+  // read all
+  readSingle = asyncHandler(async (req, res) => {
+    const result = await this.services.readSingle(req.params.id);
 
     this.sendResponse(res, {
       success: true,

@@ -10,6 +10,10 @@ class BlogServices {
   async readAll() {
     return this.model.find();
   }
+
+  async readSingle(id: string) {
+    return this.model.findById(id);
+  }
 }
 
 const blogServices = new BlogServices();
