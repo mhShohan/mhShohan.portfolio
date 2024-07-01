@@ -26,13 +26,16 @@
     "react-hook-form": "^7.51.4",
     "react-quill": "^2.0.0",
     "react-redux": "^9.1.2",
+    "react-vertical-timeline-component": "^3.6.0",
     "sonner": "^1.5.0",
+    "swiper": "^11.1.4",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20.14.9",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-vertical-timeline-component": "^3.3.6",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",

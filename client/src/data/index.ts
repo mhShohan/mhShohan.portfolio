@@ -24,3 +24,29 @@ export const sidebarData = [
   { id: '6', name: 'Create Blog', icon: BookIcon, path: '/dashboard/blogs' },
   { id: '7', name: 'Update Profile', icon: AccountCircleIcon, path: '/dashboard/profile' },
 ];
+
+export const skills = [
+  {
+    title: "FullStack Development",
+    fileName: "FullStackImg",
+    skills: [
+      "⚡ Develop highly interactive web applications",
+      "⚡ Building responsive website frontend using ReactJS and NextJS",
+      "⚡ Managing global state using Redux-toolkit and contextAPI",
+      "⚡ Creating application backend in Express , MongoDB and PostGreSQL",
+    ],
+  },
+]
+
+export const slider = [
+  { id: 1, img: './assets/slider/1.jpg' },
+  { id: 2, img: './assets/slider/2.jpg' },
+  { id: 3, img: './assets/slider/3.jpg' },
+  { id: 4, img: './assets/slider/4.jpg' },
+  { id: 5, img: './assets/slider/5.jpg' },
+  { id: 6, img: './assets/slider/6.jpg' },
+  { id: 7, img: './assets/slider/7.jpg' },
+  { id: 8, img: './assets/slider/8.jpg' },
+  { id: 9, img: './assets/slider/9.jpg' },
+  { id: 10, img: './assets/slider/10.jpg' },
+];

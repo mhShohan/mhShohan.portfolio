@@ -13,7 +13,7 @@ const blogValidator = z.object({
 const blogRoutes = Router();
 
 blogRoutes.post('/', verifyAuth, validateRequest(blogValidator), blogControllers.create);
-blogRoutes.get('/', blogControllers.readAll);
 blogRoutes.get('/:id', blogControllers.readSingle);
+blogRoutes.get('/', blogControllers.readAll);
 
 export default blogRoutes;
