@@ -7,12 +7,14 @@ import uploadFileToCloudinary from '@/lib/uploadFileToCloudinary';
 import { useCreateBlogMutation } from '@/store/api/blog.api';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, CircularProgress, Stack } from '@mui/material';
-import React, { useState } from 'react';
-import { set } from 'react-hook-form';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+import { useState } from 'react';
 import { toast } from 'sonner';
 import { z } from 'zod';
+import dynamic from 'next/dynamic';
+
+const RichText = dynamic(() => import('@/components/UI/RechTextEditor'), {
+  ssr: false,
+});
 
 const schema = z.object({
   title: z
@@ -81,7 +83,7 @@ const BlogsPage = () => {
           <CustomInput label='Blog Title' name='title' />
         </Stack>
         <Stack mb={8}>
-          <ReactQuill theme='snow' style={{ height: '250px' }} value={value} onChange={setValue} />
+          <RichText value={value} setValue={setValue} />
         </Stack>
         <Stack gap={2}>
           <CustomFileUploader
