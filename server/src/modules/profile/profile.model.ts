@@ -31,9 +31,16 @@ export interface IProfile {
     frontend: ITechnology[];
     tools: ITechnology[];
   };
+  expertiseStack: {
+    expertise: ITechnology[];
+    comfortable: ITechnology[];
+    familiar: ITechnology[];
+  },
   contactNo: string;
   address: string;
   viewPersonalInterest: boolean;
+  showTechStack: boolean;
+  showExpertiseStack: boolean;
 }
 
 const techSchema = new Schema({
@@ -67,9 +74,16 @@ const schema = new Schema({
     frontend: [{ type: techSchema }],
     tools: [{ type: techSchema }],
   },
+  expertiseStack: {
+    expertise: [{ type: techSchema }],
+    comfortable: [{ type: techSchema }],
+    familiar: [{ type: techSchema }],
+  },
   contactNo: { type: String, required: true },
   address: { type: String, required: true },
   viewPersonalInterest: { type: Boolean, required: true },
+  showTechStack: { type: Boolean, default: false },
+  showExpertiseStack: { type: Boolean, default: false },
 }, { timestamps: true });
 
 
