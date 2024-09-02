@@ -66,7 +66,7 @@ const ProjectsPage = () => {
                       ))}
                     </Box>
                   </Box>
-                  <Stack my={2} spacing={1} direction='row'>
+                  <Stack my={2} gap={1} direction='row' flexWrap='wrap'>
                     <Button
                       LinkComponent={Link}
                       href={project.liveSiteLink}
