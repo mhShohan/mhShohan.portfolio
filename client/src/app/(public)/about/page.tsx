@@ -28,15 +28,23 @@ const AboutPage = () => {
 
   return (
     <Container maxWidth='lg'>
-      <Grid container my={{ xs: 0, md: 10 }} direction={{ xs: 'column-reverse', md: 'row' }}>
-        <Grid item xs={12} md={6} display='flex' alignItems='center'>
+      <Grid container my={{ xs: 0, md: 5 }} direction={{ xs: 'column-reverse', md: 'row' }}>
+        <Grid item xs={12} md={7} display='flex' alignItems='center'>
           <Stack gap={1}>
             <Typography variant='h4' textAlign='justify' fontWeight='700'>
-              Hi, this is {data?.data.name}
+              Hi, {`I'm ${data?.data.name}`}
             </Typography>
-            <Typography variant='body1' fontFamily='Poppins' fontSize='1rem' textAlign='justify'>
-              {data?.data.description}
-            </Typography>
+            {data?.data.description.split('|BREAK| ').map((desc: string, index: number) => (
+              <Typography
+                key={index}
+                variant='body1'
+                fontFamily='Poppins'
+                fontSize='1rem'
+                textAlign='justify'
+              >
+                {desc}
+              </Typography>
+            ))}
             <Typography variant='body2' fontFamily='Poppins' fontStyle='italic'>
               <strong>Interested In:</strong> Software Engineering, System Design..!!!
             </Typography>
@@ -57,7 +65,7 @@ const AboutPage = () => {
         <Grid
           item
           xs={12}
-          md={6}
+          md={5}
           display='flex'
           justifyContent={{ xs: 'center', md: 'flex-end' }}
           alignItems='center'

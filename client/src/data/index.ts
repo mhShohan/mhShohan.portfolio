@@ -27,13 +27,15 @@ export const sidebarData = [
 
 export const skills = [
   {
-    title: "FullStack Development",
+    title: "Full Stack Development",
     fileName: "FullStackImg",
     skills: [
-      "⚡ Develop highly interactive web applications",
-      "⚡ Building responsive website frontend using ReactJS and NextJS",
-      "⚡ Managing global state using Redux-toolkit and contextAPI",
-      "⚡ Creating application backend in Express , MongoDB and PostGreSQL",
+      "⚡ Develop highly interactive full-stack web applications.",
+      "⚡ Building backend systems using Node.js and Express.js.",
+      "⚡ Building responsive user friendly frontend using React and Next.js.",
+      "⚡ Implement state management using Redux-toolkit and contextAPI.",
+      "⚡ Manage databases using MongoDB, Mongoose, PostgreSQL, Prisma.",
+      "⚡ Implement secure user authentication and authorization.",
     ],
   },
 ]

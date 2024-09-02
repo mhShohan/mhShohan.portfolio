@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Stack sx={{ p: 1 }}>
+      <Stack sx={{ p: 3 }}>
         <Stack display={{ xs: 'none', md: 'flex' }}>
           <List>
             {navbarData.map((link) => (

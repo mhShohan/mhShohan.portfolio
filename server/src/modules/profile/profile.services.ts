@@ -22,7 +22,7 @@ class ProfileServices {
   // update
   async update(payload: Partial<IProfile>) {
     const id = '667efc3a0f83a8bcab31e3dc'
-    const { techStacks, socialLinks, ...restPayload } = payload
+    const { techStacks, socialLinks, expertiseStack, ...restPayload } = payload
 
     const modifiedPayload: Record<string, unknown> = { ...restPayload }
 
@@ -37,6 +37,8 @@ class ProfileServices {
     try {
       session.startTransaction();
 
+      // update technology stack
+      // ------------------------------------------------------------------------
       if (techStacks) {
         const { backend, databases, frontend, languages, tools } = techStacks
 
@@ -90,6 +92,61 @@ class ProfileServices {
               'techStacks.frontend': { name: { $in: removeTechStacks.frontend } },
               'techStacks.languages': { name: { $in: removeTechStacks.languages } },
               'techStacks.tools': { name: { $in: removeTechStacks.tools } },
+            }
+          },
+          {
+            session, new: true, multi: true
+          })
+      }
+
+
+      // update expertise stack
+      // ------------------------------------------------------------------------
+      if (expertiseStack) {
+        const { expertise, comfortable, familiar } = expertiseStack
+
+        const separate = (path: ITechnology[]) => {
+          if (!path) return { add: [], remove: [] }
+
+          const add = path.filter((item: ITechnology) => !item.isDeleted)
+          const remove = path.filter((item: ITechnology) => item.isDeleted)
+
+          return { add, remove }
+        }
+
+        // add expertise stacks
+        const addExpertiseStacks = {
+          expertise: separate(expertise as ITechnology[]).add,
+          comfortable: separate(comfortable as ITechnology[]).add,
+          familiar: separate(familiar as ITechnology[]).add,
+        }
+
+        await this.model.findByIdAndUpdate(id,
+          {
+            $addToSet: {
+              'expertiseStack.expertise': { $each: addExpertiseStacks.expertise },
+              'expertiseStack.comfortable': { $each: addExpertiseStacks.comfortable },
+              'expertiseStack.familiar': { $each: addExpertiseStacks.familiar },
+            }
+          }
+          , {
+            session,
+            new: true,
+          })
+
+        /// remove expertise stacks
+        const removeExpertiseStacks = {
+          expertise: separate(expertise as ITechnology[]).remove.map((item) => item.name),
+          comfortable: separate(comfortable as ITechnology[]).remove.map((item) => item.name),
+          familiar: separate(familiar as ITechnology[]).remove.map((item) => item.name)
+        }
+
+        await this.model.findByIdAndUpdate(id,
+          {
+            $pull: {
+              'expertiseStack.expertise': { name: { $in: removeExpertiseStacks.expertise } },
+              'expertiseStack.comfortable': { name: { $in: removeExpertiseStacks.comfortable } },
+              'expertiseStack.familiar': { name: { $in: removeExpertiseStacks.familiar } },
             }
           },
           {
