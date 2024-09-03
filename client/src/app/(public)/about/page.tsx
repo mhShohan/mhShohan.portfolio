@@ -49,17 +49,20 @@ const AboutPage = () => {
               <strong>Interested In:</strong> Software Engineering, System Design..!!!
             </Typography>
             <SocialLinks socialLinks={data?.data.socialLinks} />
-            <Box>
+            <Stack direction='row' gap={1}>
               <Button
                 variant='contained'
-                color='info'
+                color='primary'
                 LinkComponent={Link}
                 target='_blank'
                 href={data?.data.resume}
               >
                 View Resume
               </Button>
-            </Box>
+              <Button variant='outlined' color='primary' LinkComponent={Link} href='/projects'>
+                View Projects
+              </Button>
+            </Stack>
           </Stack>
         </Grid>
         <Grid
