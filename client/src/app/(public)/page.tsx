@@ -98,7 +98,7 @@ const Homepage = () => {
             </Typography>
             <Stack direction='row' gap={1}>
               <Button
-                variant='outlined'
+                variant='contained'
                 target='_blank'
                 color='primary'
                 LinkComponent={Link}
@@ -106,9 +106,9 @@ const Homepage = () => {
               >
                 View Resume
               </Button>
-              {/* <Button variant='outlined' color='primary'>
-                Download Resume
-              </Button> */}
+              <Button variant='outlined' color='primary' LinkComponent={Link} href='/about'>
+                View Details
+              </Button>
             </Stack>
           </Grid>
           <Grid item xs={12} md={4} display='flex' justifyContent='center' alignItems='center'>
