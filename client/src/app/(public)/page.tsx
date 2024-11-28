@@ -11,7 +11,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import { Button, Container, Grid, Stack, Typography, useTheme } from '@mui/material';
 
 // assets
-import img from '@/assets/banner.png';
+import img from '@/assets/profile-pic.png';
 import { useGetProfileQuery } from '@/store/api/profile.api';
 import Loader from '@/components/shared/Loader';
 import { IProfile } from '@/types';

@@ -44,8 +44,8 @@ const schema = z.object({
   link: z
     .string({ required_error: 'Organization site link is required' })
     .min(1, { message: 'Organization site link is required' }),
-  startDate: z.date({ message: 'Start Date is required' }),
-  endDate: z.date({ message: 'End Date is required' }),
+  startDate: z.string({ message: 'Start Date is required' }),
+  endDate: z.string({ message: 'End Date is required' }),
 });
 
 const ExperiencesPage = () => {
@@ -102,10 +102,10 @@ const ExperiencesPage = () => {
                 <CustomInput label='Organization Site Link' name='link' />
               </Grid>
               <Grid item xs={12}>
-                <CustomDatePicker label='Start Date' name='startDate' />
+                <CustomInput label='Start Date' name='startDate' />
               </Grid>
               <Grid item xs={12}>
-                <CustomDatePicker label='End Date' name='endDate' />
+                <CustomInput label='End Date' name='endDate' />
               </Grid>
               {Array.from({ length: resCount }, (_, index) => index + 1).map((i: number) => (
                 <>
@@ -204,7 +204,7 @@ const ExperiencesPage = () => {
                     </Typography>
                   ))}
                   <Typography variant='body1' mt={1} lineHeight={1} fontSize='700'>
-                    {dateFormatter(exp.startDate, exp.endDate)}
+                    {`${exp.startDate} - ${exp.endDate}`}
                   </Typography>
                 </Stack>
               </Grid>
