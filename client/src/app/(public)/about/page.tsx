@@ -4,13 +4,10 @@ import Loader from '@/components/shared/Loader';
 import { useGetProfileQuery } from '@/store/api/profile.api';
 import { Box, Button, Container, Divider, Grid, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
-
-import profileImage from '@/assets/profile.png';
+import profileImage from '@/assets/profile-pic.png';
 import CircularLoader from '@/components/UI/CircularLoader';
 import { IExperience, ITechnology } from '@/types';
 import Link from 'next/link';
-import dateFormatter from '@/utils/dateFormatter';
-
 import CircleIcon from '@mui/icons-material/Circle';
 import { useGetAllExperienceQuery } from '@/store/api/experience.api';
 import { Heading } from '@/components/extended';
@@ -91,7 +88,7 @@ const AboutPage = () => {
         </Grid>
       </Grid>
 
-      <Stack alignItems='center' mb={10}>
+      <Stack alignItems='center' mt={10} mb={10}>
         <Heading>Experiences</Heading>
         {isExpLoading ? (
           <CircularLoader />
@@ -102,7 +99,11 @@ const AboutPage = () => {
                 <Stack p={4} boxShadow={24} gap={0.5} bgcolor='#254B62' borderRadius={4}>
                   <Typography variant='h5' lineHeight={1} fontWeight='700'>
                     {exp.title} at{' '}
-                    <Link href={exp.link} target='_blank' style={{ color: 'lightblue' }}>
+                    <Link
+                      href={exp.link}
+                      target='_blank'
+                      style={{ fontStyle: 'italic', color: 'lightblue' }}
+                    >
                       {exp.organization}
                     </Link>
                   </Typography>
@@ -116,7 +117,7 @@ const AboutPage = () => {
                     </Typography>
                   ))}
                   <Typography variant='body1' mt={1} lineHeight={1} fontSize='700'>
-                    {dateFormatter(exp.startDate, exp.endDate)}
+                    {`${exp.startDate} - ${exp.endDate}`}
                   </Typography>
                 </Stack>
               </Grid>

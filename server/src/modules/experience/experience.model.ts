@@ -13,9 +13,9 @@ const schema = new Schema({
   title: { type: String, required: true },
   organization: { type: String, required: true },
   link: { type: String, required: true },
-  responsibilities: { type: [String], required: true },
-  startDate: { type: Date, required: true },
-  endDate: { type: Date, required: true },
+  responsibilities: { type: [ String ], required: true },
+  startDate: { type: String, required: true },
+  endDate: { type: String, required: true },
 }, { timestamps: true });
 
 
