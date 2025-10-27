@@ -67,6 +67,18 @@ class ProfileControllers {
       data: result,
     });
   });
+
+  // update password
+  updatePassword = asyncHandler(async (req, res) => {
+    const result = await this.services.updatePassword();
+
+    this.sendResponse(res, {
+      success: true,
+      statusCode: this.STATUS.OK,
+      message: `${this.messageTitle} Password Updated Successfully`,
+      data: result,
+    });
+  });
 }
 
 const profileControllers = new ProfileControllers();

@@ -78,25 +78,26 @@ const Homepage = () => {
             </Typography>
             <Typography
               variant='h2'
-              fontWeight='700'
-              fontSize={{ xs: '2rem', sm: '2.8rem', md: '3.5rem' }}
+              fontWeight='800'
+              fontSize={{ xs: '2rem', sm: '2.8rem', md: '3rem' }}
               textTransform='uppercase'
               textAlign={{ xs: 'center', md: 'left' }}
-              lineHeight='1'
+              lineHeight='0.8'
             >
               {profile?.name}
             </Typography>
             <Typography
               variant='h4'
               textAlign={{ xs: 'center', md: 'left' }}
-              fontSize={{ xs: '1.2rem', sm: '1.6rem', md: '2rem' }}
+              fontSize={{ xs: '1.2rem', sm: '1.6rem', md: '2.2rem' }}
+              fontWeight={700}
             >
               {profile.title}
             </Typography>
             <Typography variant='body1' textAlign={{ xs: 'center', md: 'left' }}>
               {profile.bio}
             </Typography>
-            <Stack direction='row' gap={1}>
+            <Stack direction='row' gap={1} mt={1}>
               <Button
                 variant='contained'
                 target='_blank'
