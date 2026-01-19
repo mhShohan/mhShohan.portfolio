@@ -15,7 +15,6 @@ import img from '@/assets/profile-pic.png';
 import { useGetProfileQuery } from '@/store/api/profile.api';
 import Loader from '@/components/shared/Loader';
 import { IProfile } from '@/types';
-import { toast } from 'sonner';
 
 const Homepage = () => {
   const { data, isLoading: isProfileLoading } = useGetProfileQuery(undefined);

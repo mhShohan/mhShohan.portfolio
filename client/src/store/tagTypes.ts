@@ -5,7 +5,7 @@ export const tagTypes = {
   project: 'PROJECT',
   profile: 'PROFILE',
   blog: 'BLOG',
-}
-
+  job: 'JOB',
+};
 
 export const tagTypeList = Object.values(tagTypes);

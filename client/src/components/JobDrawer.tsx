@@ -12,6 +12,7 @@ import CustomInput from './shared/form/CustomInput';
 import { z } from 'zod';
 import CustomSelectField from './shared/form/CustomSelect';
 import dynamic from 'next/dynamic';
+import { useCreateJobMutation } from '@/store/api/job.api';
 
 const RichText = dynamic(() => import('@/components/UI/RechTextEditor'), {
   ssr: false,
@@ -52,17 +53,17 @@ const schema = z.object({
   status: z
     .string({ required_error: 'Job status is required' })
     .min(1, { message: 'Job status is required' }),
-  description: z
-    .string({ required_error: 'Job description is required' })
-    .min(1, { message: 'Job description is required' }),
 });
 
 const AddJobForm = () => {
   const [value, setValue] = React.useState<string>('');
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [createNewJob] = useCreateJobMutation();
 
   const handleSubmit = async (data: any) => {
     setIsLoading(true);
+
+    console.log(data, 'data');
 
     if (!value) {
       toast.error('Job description is missing!');
@@ -71,7 +72,12 @@ const AddJobForm = () => {
     }
 
     try {
-      const res = { success: true }; // await createBlog({ title: data.title, cover: imageLink, text: value }).unwrap();
+      const res = await createNewJob({
+        title: data.title,
+        company: data.company,
+        status: data.status,
+        description: value,
+      }).unwrap();
 
       if (res.success) {
         toast.success('Job created successfully');

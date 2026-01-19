@@ -6,6 +6,7 @@ import messageRoutes from '../modules/message/message.routes';
 import profileRoutes from '../modules/profile/profile.routes';
 import projectRoutes from '../modules/project/project.routes';
 import technologyRoutes from '../modules/technology/technology.routes';
+import jobRoutes from '../modules/job/job.routes';
 
 const rootRoutes = Router();
 
@@ -16,5 +17,6 @@ rootRoutes.use('/profile', profileRoutes);
 rootRoutes.use('/projects', projectRoutes);
 rootRoutes.use('/messages', messageRoutes);
 rootRoutes.use('/blogs', blogRoutes);
+rootRoutes.use('/jobs', jobRoutes);
 
 export default rootRoutes;
