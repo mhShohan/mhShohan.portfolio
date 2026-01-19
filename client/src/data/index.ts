@@ -5,6 +5,7 @@ import BeenhereIcon from '@mui/icons-material/Beenhere';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import SchoolIcon from '@mui/icons-material/School';
 import BookIcon from '@mui/icons-material/Book';
+import WorkIcon from '@mui/icons-material/Work';
 
 export const navbarData = [
   { id: 1, name: 'Home', path: '/' },
@@ -12,8 +13,7 @@ export const navbarData = [
   { id: 3, name: 'Projects', path: '/projects' },
   { id: 4, name: 'Blogs', path: '/blogs' },
   { id: 5, name: 'Contact', path: '/contact' },
-]
-
+];
 
 export const sidebarData = [
   { id: '1', name: 'Dashboard', icon: DashboardIcon, path: '/dashboard' },
@@ -23,22 +23,23 @@ export const sidebarData = [
   { id: '5', name: 'Projects', icon: BeenhereIcon, path: '/dashboard/projects' },
   { id: '6', name: 'Create Blog', icon: BookIcon, path: '/dashboard/blogs' },
   { id: '7', name: 'Update Profile', icon: AccountCircleIcon, path: '/dashboard/profile' },
+  { id: '8', name: 'Jobs', icon: WorkIcon, path: '/dashboard/jobs' },
 ];
 
 export const skills = [
   {
-    title: "Full Stack Development",
-    fileName: "FullStackImg",
+    title: 'Full Stack Development',
+    fileName: 'FullStackImg',
     skills: [
-      "⚡ Develop highly interactive full-stack web applications.",
-      "⚡ Building backend systems using Node.js and Express.js.",
-      "⚡ Building responsive user friendly frontend using React and Next.js.",
-      "⚡ Implement state management using Redux-toolkit and contextAPI.",
-      "⚡ Manage databases using MongoDB, Mongoose, PostgreSQL, Prisma.",
-      "⚡ Implement secure user authentication and authorization.",
+      '⚡ Develop highly interactive full-stack web applications.',
+      '⚡ Building backend systems using Node.js and Express.js.',
+      '⚡ Building responsive user friendly frontend using React and Next.js.',
+      '⚡ Implement state management using Redux-toolkit and contextAPI.',
+      '⚡ Manage databases using MongoDB, Mongoose, PostgreSQL, Prisma.',
+      '⚡ Implement secure user authentication and authorization.',
     ],
   },
-]
+];
 
 export const slider = [
   { id: 1, img: './assets/slider/1.jpg' },

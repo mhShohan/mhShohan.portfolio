@@ -26,39 +26,6 @@ const Homepage = () => {
 
   const profile: IProfile = data?.data;
 
-  // const onButtonClick = () => {
-  //   const pdfUrl = '/mh-shohan-FE.pdf';
-  //   const link = document.createElement('a');
-  //   link.href = pdfUrl;
-  //   link.download = 'mh-shohan-FE.pdf'; // specify the filename
-  //   document.body.appendChild(link);
-  //   link.click();
-  //   document.body.removeChild(link);
-  // };
-
-  // const handleDownload = () => {
-  //   const toastId = toast.loading('Downloading resume...');
-  //   fetch('/mh-shohan-FE.pdf')
-  //     check to make sure you didn't have an unexpected failure (may need to check other things here depending on use case / backend)
-  //     .then((resp) => (resp.status === 200 ? resp.blob() : Promise.reject('something went wrong')))
-  //     .then((blob) => {
-  //       const url = window.URL.createObjectURL(blob);
-  //       const a = document.createElement('a');
-  //       a.style.display = 'none';
-  //       a.href = url;
-  //       the filename you want
-  //       a.download = 'mhShohan.resume.pdf';
-  //       document.body.appendChild(a);
-  //       a.click();
-  //       window.URL.revokeObjectURL(url);
-  //       or you know, something with better UX...
-  //       toast.success('Resume has been downloaded!', { id: toastId });
-  //     })
-  //     .catch((e) => {
-  //       toast.error('Failed to download resume. Please try again later.', { id: toastId });
-  //     });
-  // };
-
   return (
     <Container maxWidth='lg'>
       <Stack>
