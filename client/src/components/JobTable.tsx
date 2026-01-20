@@ -21,6 +21,8 @@ import {
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ViewSingleJob from './jobs/ViewJob';
+import EditJobDrawer from './jobs/EditJobDrawer';
+import JobDeleteModal from './jobs/JobDeleteModal';
 
 export default function JobsTable({ data }: { data: any[] }) {
   const [sorting, setSorting] = useState<any>([]);
@@ -28,14 +30,6 @@ export default function JobsTable({ data }: { data: any[] }) {
     pageIndex: 0,
     pageSize: 5,
   });
-
-  const handleEdit = (row: any) => {
-    console.log('EDIT', row);
-  };
-
-  const handleDelete = (row: any) => {
-    console.log('DELETE', row);
-  };
 
   const columns = useMemo(
     () => [
@@ -58,14 +52,9 @@ export default function JobsTable({ data }: { data: any[] }) {
         cell: ({ row }: any) => (
           <Stack direction='row' spacing={1}>
             <ViewSingleJob data={row.original} />
+            <EditJobDrawer data={row.original} />
 
-            <IconButton size='small' color='success' onClick={() => handleEdit(row.original)}>
-              <EditIcon fontSize='small' />
-            </IconButton>
-
-            <IconButton size='small' color='error' onClick={() => handleDelete(row.original)}>
-              <DeleteIcon fontSize='small' />
-            </IconButton>
+            <JobDeleteModal id={row.original._id} />
           </Stack>
         ),
       },

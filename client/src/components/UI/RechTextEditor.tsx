@@ -9,7 +9,7 @@ const RichTextEditor = ({
   value: string;
   setValue: Dispatch<SetStateAction<string>>;
 }) => {
-  return <ReactQuill theme='snow' style={{ height: '250px' }} value={value} onChange={setValue} />;
+  return <ReactQuill theme='snow' style={{ height: '350px' }} value={value} onChange={setValue} />;
 };
 
 export default RichTextEditor;

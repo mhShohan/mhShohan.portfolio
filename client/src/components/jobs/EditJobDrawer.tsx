@@ -5,39 +5,42 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import { toast } from 'sonner';
-import CustomForm from './shared/form/CustomForm';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { CircularProgress, Stack } from '@mui/material';
-import CustomInput from './shared/form/CustomInput';
+import { CircularProgress, IconButton, Stack } from '@mui/material';
 import { z } from 'zod';
-import CustomSelectField from './shared/form/CustomSelect';
 import dynamic from 'next/dynamic';
-import { useCreateJobMutation } from '@/store/api/job.api';
+import { useCreateJobMutation, useUpdateJobMutation } from '@/store/api/job.api';
+import CustomForm from '../shared/form/CustomForm';
+import CustomInput from '../shared/form/CustomInput';
+import CustomSelectField from '../shared/form/CustomSelect';
+import { FieldValues } from 'react-hook-form';
+import EditIcon from '@mui/icons-material/Edit';
 
 const RichText = dynamic(() => import('@/components/UI/RechTextEditor'), {
   ssr: false,
 });
 
-export default function JobDrawer() {
-  const [open, setOpen] = React.useState(false);
-
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
+interface Props {
+  data: {
+    title: string;
+    company: string;
+    status: string;
+    description: string;
   };
+}
 
-  const DrawerList = (
-    <Box sx={{ width: 800 }} role='presentation' p={2} mt={8}>
-      <AddJobForm setOpen={setOpen} />
-    </Box>
-  );
+export default function EditJobDrawer({ data }: Props) {
+  const [open, setOpen] = React.useState(false);
 
   return (
     <div>
-      <Button onClick={toggleDrawer(true)} variant='contained' color='secondary'>
-        Add Job
-      </Button>
-      <Drawer open={open} onClose={toggleDrawer(false)} anchor='right'>
-        {DrawerList}
+      <IconButton size='small' color='success' onClick={() => setOpen(true)}>
+        <EditIcon fontSize='small' />
+      </IconButton>
+      <Drawer open={open} onClose={() => setOpen(false)} anchor='right'>
+        <Box sx={{ width: 800 }} role='presentation' p={2} mt={8}>
+          <EditJobForm data={data} setOpen={setOpen} />
+        </Box>
       </Drawer>
     </div>
   );
@@ -55,12 +58,23 @@ const schema = z.object({
     .min(1, { message: 'Job status is required' }),
 });
 
-const AddJobForm = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
+interface Props {
+  data: {
+    title: string;
+    company: string;
+    status: string;
+    description: string;
+  };
+  setOpen: (open: boolean) => void;
+}
+
+const EditJobForm = ({ data, setOpen }: Props) => {
   const [value, setValue] = React.useState<string>('');
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const [createNewJob] = useCreateJobMutation();
+  const [updateJob] = useUpdateJobMutation();
 
-  const handleSubmit = async (data: any) => {
+  const jobId = data && (data as any)._id;
+  const handleSubmit = async (data: FieldValues) => {
     setIsLoading(true);
 
     if (!value) {
@@ -70,7 +84,8 @@ const AddJobForm = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
     }
 
     try {
-      const res = await createNewJob({
+      const res = await updateJob({
+        id: jobId,
         title: data.title,
         company: data.company,
         status: data.status,
@@ -78,24 +93,33 @@ const AddJobForm = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
       }).unwrap();
 
       if (res.success) {
-        toast.success('Job created successfully');
+        toast.success('Job updated successfully');
         setValue('');
         return true;
       } else {
-        toast.error('Failed to create job');
+        toast.error('Failed to update job');
       }
     } catch (error) {
-      toast.error('Failed to create job');
+      toast.error('Failed to update job');
     } finally {
       setIsLoading(false);
       setOpen(false);
     }
   };
 
+  React.useEffect(() => {
+    setValue(data?.description || '');
+  }, [data]);
+
   return (
     <CustomForm
       onSubmit={handleSubmit}
-      defaultValues={{ title: '', company: '', status: '', description: '' }}
+      defaultValues={{
+        title: data.title,
+        company: data.company,
+        status: data.status,
+        description: data.description,
+      }}
       resolver={zodResolver(schema)}
     >
       <Stack>
@@ -127,7 +151,7 @@ const AddJobForm = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
             {isLoading ? (
               <CircularProgress sx={{ width: '25px !important', height: '25px !important' }} />
             ) : (
-              'Add Job'
+              'Update Job'
             )}
           </Button>
         </Stack>
