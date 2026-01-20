@@ -2,12 +2,11 @@ export interface ITechnology {
   _id: string;
   name: string;
   image: string;
-  visible?: boolean
+  visible?: boolean;
   createAt?: string;
   updateAt?: string;
   isDeleted?: boolean;
 }
-
 
 export interface IEducation {
   _id: string;
@@ -46,7 +45,6 @@ export interface IProject {
 
 export type IProjectCategory = 'Frontend' | 'Backend' | 'Full-stack';
 
-
 export interface IBlog {
   _id: string;
   title: string;
@@ -54,10 +52,7 @@ export interface IBlog {
   cover: string;
   createdAt: Date;
   updatedAt: Date;
-
 }
-
-
 
 export interface IProfile {
   _id: string;
@@ -77,7 +72,7 @@ export interface IProfile {
     leetcode?: string;
     linkedin?: string;
     twitter?: string;
-  }
+  };
   techStacks: {
     languages: ITechnology[];
     databases: ITechnology[];
@@ -86,3 +81,6 @@ export interface IProfile {
     tools: ITechnology[];
   };
 }
+
+// CSS module declarations
+declare module 'react-quill/dist/quill.snow.css';

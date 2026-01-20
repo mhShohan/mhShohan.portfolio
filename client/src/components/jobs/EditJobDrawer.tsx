@@ -58,7 +58,7 @@ const schema = z.object({
     .min(1, { message: 'Job status is required' }),
 });
 
-interface Props {
+interface EditJobForm {
   data: {
     title: string;
     company: string;
@@ -68,7 +68,7 @@ interface Props {
   setOpen: (open: boolean) => void;
 }
 
-const EditJobForm = ({ data, setOpen }: Props) => {
+const EditJobForm = ({ data, setOpen }: EditJobForm) => {
   const [value, setValue] = React.useState<string>('');
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [updateJob] = useUpdateJobMutation();

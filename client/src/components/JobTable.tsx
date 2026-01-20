@@ -15,11 +15,9 @@ import {
   TableRow,
   TableSortLabel,
   Paper,
-  IconButton,
   Stack,
+  Chip,
 } from '@mui/material';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
 import ViewSingleJob from './jobs/ViewJob';
 import EditJobDrawer from './jobs/EditJobDrawer';
 import JobDeleteModal from './jobs/JobDeleteModal';
@@ -44,6 +42,15 @@ export default function JobsTable({ data }: { data: any[] }) {
       {
         accessorKey: 'status',
         header: 'Status',
+        cell: ({ row }: any) => {
+          const statusColor = ['Found'].includes(row.original.status)
+            ? 'warning'
+            : ['Applied'].includes(row.original.status)
+              ? 'success'
+              : 'primary';
+
+          return <Chip label={row.original.status} color={statusColor} variant='filled' />;
+        },
       },
       {
         id: 'actions',
@@ -53,7 +60,6 @@ export default function JobsTable({ data }: { data: any[] }) {
           <Stack direction='row' spacing={1}>
             <ViewSingleJob data={row.original} />
             <EditJobDrawer data={row.original} />
-
             <JobDeleteModal id={row.original._id} />
           </Stack>
         ),
