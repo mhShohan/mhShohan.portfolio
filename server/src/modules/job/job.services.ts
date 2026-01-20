@@ -9,11 +9,19 @@ class JobServices {
   }
 
   async readAll() {
-    return this.model.find();
+    return this.model.find().sort({ createdAt: 1 });
   }
 
   async readSingle(id: string) {
     return this.model.findById(id);
+  }
+
+  async deleteOne(id: string) {
+    return this.model.findByIdAndDelete(id);
+  }
+
+  async updateOne(id: string, payload: Partial<IJob>) {
+    return this.model.findByIdAndUpdate(id, payload, { new: true });
   }
 }
 

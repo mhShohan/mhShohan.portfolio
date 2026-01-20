@@ -44,6 +44,30 @@ class JobControllers {
       data: result,
     });
   });
+
+  // delete one
+  deleteOne = asyncHandler(async (req, res) => {
+    const result = await this.services.deleteOne(req.params.id);
+
+    this.sendResponse(res, {
+      success: true,
+      statusCode: this.STATUS.OK,
+      message: `${this.messageTitle} Deleted Successfully`,
+      data: result,
+    });
+  });
+
+  // update one
+  updateOne = asyncHandler(async (req, res) => {
+    const result = await this.services.updateOne(req.params.id, req.body);
+
+    this.sendResponse(res, {
+      success: true,
+      statusCode: this.STATUS.OK,
+      message: `${this.messageTitle} Updated Successfully`,
+      data: result,
+    });
+  });
 }
 
 const jobControllers = new JobControllers();
