@@ -4,9 +4,10 @@ import { baseApi } from './baseApi';
 const jobApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     getAllJob: build.query({
-      query: () => ({
+      query: (query) => ({
         url: '/jobs',
         method: 'GET',
+        params: query,
       }),
       providesTags: [tagTypes.job],
     }),

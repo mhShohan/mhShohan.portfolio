@@ -17,17 +17,20 @@ import {
   Paper,
   Stack,
   Chip,
+  Pagination,
 } from '@mui/material';
 import ViewSingleJob from './jobs/ViewJob';
 import EditJobDrawer from './jobs/EditJobDrawer';
 import JobDeleteModal from './jobs/JobDeleteModal';
 
-export default function JobsTable({ data }: { data: any[] }) {
+export default function JobsTable({
+  data,
+  setQuery,
+}: {
+  data: any;
+  setQuery: React.Dispatch<React.SetStateAction<any>>;
+}) {
   const [sorting, setSorting] = useState<any>([]);
-  const [pagination, setPagination] = useState({
-    pageIndex: 0,
-    pageSize: 5,
-  });
 
   const columns = useMemo(
     () => [
@@ -69,14 +72,12 @@ export default function JobsTable({ data }: { data: any[] }) {
   );
 
   const table = useReactTable({
-    data,
+    data: data?.data || [],
     columns,
     state: {
       sorting,
-      pagination,
     },
     onSortingChange: setSorting,
-    onPaginationChange: setPagination,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -121,6 +122,14 @@ export default function JobsTable({ data }: { data: any[] }) {
           </TableBody>
         </Table>
       </TableContainer>
+      <Stack py={2} alignItems='center'>
+        <Pagination
+          count={data?.totalPage}
+          variant='outlined'
+          shape='rounded'
+          onChange={(_, page) => setQuery((prev: any) => ({ ...prev, page }))}
+        />
+      </Stack>
     </Paper>
   );
 }

@@ -23,7 +23,7 @@ class JobControllers {
 
   // read all
   readAll = asyncHandler(async (req, res) => {
-    const result = await this.services.readAll();
+    const result = await this.services.readAll(req.query);
 
     this.sendResponse(res, {
       success: true,
