@@ -13,6 +13,7 @@ import CustomForm from '@/components/shared/form/CustomForm';
 import CustomInput from '@/components/shared/form/CustomInput';
 import CustomSelectField from '@/components/shared/form/CustomSelect';
 import { useSearchParams } from 'next/navigation';
+import { config } from '@/utils/config';
 
 const RichText = dynamic(() => import('@/components/UI/RechTextEditor'), {
   ssr: false,
@@ -48,7 +49,7 @@ const AddPublicJobPage = () => {
 
     const id = searchParams.get('id') as string;
 
-    if (id !== 'mh-shohan') {
+    if (id !== config.addJobUser) {
       toast.error('Invalid job submission link!');
 
       setIsLoading(false);
@@ -103,6 +104,7 @@ const AddPublicJobPage = () => {
                   { name: 'Interviewing', value: 'Interviewing' },
                   { name: 'Offered', value: 'Offered' },
                   { name: 'Rejected', value: 'Rejected' },
+                  { name: 'Not Interested', value: 'Not Interested' },
                 ]}
               />
             </Stack>

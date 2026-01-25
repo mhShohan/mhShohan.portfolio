@@ -5,4 +5,5 @@ export const config = {
   cloudinaryApiKey: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
   cloudinaryApiSecret: process.env.NEXT_PUBLIC_CLOUDINARY_API_SECRET,
   cloudinaryUploadPreset: process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET,
-}
+  addJobUser: process.env.NEXT_PUBLIC_ADD_JOB_USER,
+};

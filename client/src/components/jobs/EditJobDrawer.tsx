@@ -140,6 +140,7 @@ const EditJobForm = ({ data, setOpen }: EditJobForm) => {
               { name: 'Interviewing', value: 'Interviewing' },
               { name: 'Offered', value: 'Offered' },
               { name: 'Rejected', value: 'Rejected' },
+              { name: 'Not Interested', value: 'Not Interested' },
             ]}
           />
         </Stack>
