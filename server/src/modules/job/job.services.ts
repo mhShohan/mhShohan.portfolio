@@ -31,7 +31,7 @@ class JobServices {
       .find(whereCondition)
       .skip(skip)
       .limit(Number(limit))
-      .sort({ createdAt: 1 });
+      .sort({ createdAt: -1 });
 
     return {
       total,
