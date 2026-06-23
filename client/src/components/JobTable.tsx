@@ -43,6 +43,19 @@ export default function JobsTable({
         header: 'Company',
       },
       {
+        accessorKey: 'updatedAt',
+        header: 'Apply Date',
+        cell: ({ row }: any) => {
+          const date = new Date(row.original.updatedAt);
+          const formattedDate = date.toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric',
+          });
+          return formattedDate;
+        },
+      },
+      {
         accessorKey: 'status',
         header: 'Status',
         cell: ({ row }: any) => {
